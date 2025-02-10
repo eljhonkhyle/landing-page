@@ -24,6 +24,17 @@ export default [
       'react-refresh': reactRefresh,
       
     },
+
+    extends: [
+      'eslint:recommended',
+      'plugin:react/jsx-runtime',
+      'plugin:react/recommended',
+      'plugin:prettier/recommended',
+      'prettier',
+    ],
+    plugins: ['react'],
+
+ //...
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
@@ -36,16 +47,6 @@ export default [
       ],
     },
     
-      extends: [
-          'eslint:recommended',
-          'plugin:react/jsx-runtime',
-          'plugin:react/recommended',
-          'plugin:prettier/recommended',
-          'prettier',
-        ],
-        plugins: ['react'],
-  
-     //...
   
   },
 ]
