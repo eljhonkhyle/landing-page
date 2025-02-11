@@ -1,0 +1,50 @@
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 90%;
+    gap: 4rem; /* Space between text and image */
+}
+
+/* Ensures text and image take equal space on larger screens */
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about {
+    margin-top: 2rem;
+    line-height: 2rem;
+}
+
+/* Responsive: Stack items on smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center;
+        gap: 2rem; /* Reduce space for better balance */
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%; /* Allow full width */
+    }
+
+    .hero-image img {
+        max-width: 80%; /* Prevent image from being too wide */
+    }
+}

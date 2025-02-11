@@ -1,39 +1,49 @@
 import React, { useState } from "react";
 import "./header.css";
-import Home from "../Home/Home";
+import Carousel from "../Carousel/Carousel";
+import Hero from "../Hero/Hero";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
+
+import logo1 from '../../assets/logo1.png'
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Menu state
 
   return (
     <div>
       <nav className="header">
         {/* Logo */}
-        <h1 className="logo" onClick={() => setActiveSection("home")}>Havoc Properties</h1>
+        <img src={logo1} className="logo1" onClick={() => setActiveSection("home")}/>
+
+        {/* Hamburger Menu */}
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </div>
 
         {/* Navigation Links */}
-        <ul className="nav-links">
+        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
           <li
             className={activeSection === "home" ? "active" : ""}
-            onClick={() => setActiveSection("home")}
+            onClick={() => { setActiveSection("home"); setIsMenuOpen(false); }}
           >
             <a href="#home">Home</a>
           </li>
           <li
             className={activeSection === "amenities" ? "active" : ""}
-            onClick={() => setActiveSection("amenities")}
+            onClick={() => { setActiveSection("amenities"); setIsMenuOpen(false); }}
           >
             <a href="#amenities">Amenities</a>
           </li>
           <li
             className={activeSection === "schedule" ? "active" : ""}
-            onClick={() => setActiveSection("schedule")}
+            onClick={() => { setActiveSection("schedule"); setIsMenuOpen(false); }}
           >
             <a href="#schedule">Schedule</a>
           </li>
           <li
             className={activeSection === "contact" ? "active" : ""}
-            onClick={() => setActiveSection("contact")}
+            onClick={() => { setActiveSection("contact"); setIsMenuOpen(false); }}
           >
             <a href="#contact">Contact Us</a>
           </li>
@@ -42,17 +52,12 @@ const Header = () => {
 
       {/* Sections */}
       <div id="home">
-        <Home />
+        <Hero />
+        <Carousel />
       </div>
-      <div id="amenities">
-        <h2>Amenities Section</h2>
-      </div>
-      <div id="schedule">
-        <h2>Schedule Section</h2>
-      </div>
-      <div id="contact">
-        <h2>Contact Us Section</h2>
-      </div>
+      <div id="amenities"><h2></h2></div>
+      <div id="schedule"><h2></h2></div>
+      <div id="contact"><h2></h2></div>
     </div>
   );
 };
