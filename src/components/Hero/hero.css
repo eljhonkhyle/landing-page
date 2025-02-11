@@ -5,6 +5,8 @@
     margin: 2rem auto;
     max-width: 90%;
     gap: 4rem; /* Space between text and image */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 /* Ensures text and image take equal space on larger screens */
@@ -23,10 +25,10 @@
     width: 100%;
     max-width: 450px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
 }
-
+  
 .about {
     margin-top: 2rem;
     line-height: 2rem;
@@ -37,14 +39,20 @@
     .hero-section {
         flex-direction: column; /* Stack text and image vertically */
         align-items: center;
-        gap: 2rem; /* Reduce space for better balance */
+        gap: 1.5rem; /* Reduce space for better balance */
     }
 
-    .hero-text, .hero-image {
-        max-width: 100%; /* Allow full width */
+    .hero-text {
+        max-width: 90%; /* Adjust text width for better readability */
+        text-align: left; /* Center align for better look */
+    }
+
+    .hero-image {
+        justify-content: center;
+        margin-top: 1rem; /* Space between text and image */
     }
 
     .hero-image img {
-        max-width: 80%; /* Prevent image from being too wide */
+        max-width: 70%; /* Adjust image size */
     }
 }
