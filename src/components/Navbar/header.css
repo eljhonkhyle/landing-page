@@ -1,6 +1,6 @@
 /* --- General Header Styles --- */
 .header {
-    margin: 0 15px;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,6 +68,7 @@
 
 /* --- Hamburger Menu (Hidden on Desktop) --- */
 .hamburger {
+    margin-right: 2rem;
     display: none;
     font-size: 2rem;
     cursor: pointer;
@@ -85,7 +86,7 @@
         flex-direction: column;
         background: rgba(0, 81, 99, 0.9);
         position: absolute;
-        top: 60px;
+        top: 80px;
         right: 0;
         width: 200px;
         border-radius: 8px;
