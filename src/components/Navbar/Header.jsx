@@ -3,7 +3,7 @@ import "./header.css";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
-import logo1 from '../../assets/logo1.png'
+import Logo from '../../assets/Logo1.png'
 import Properties from "../Properties/Properties"
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
     <div>
       <nav className="header">
         {/* Logo */}
-        <img src={logo1} className="logo1" onClick={() => setActiveSection("home")}/>
+        <img src={Logo} className="logo1" onClick={() => setActiveSection("home")}/>
 
         {/* Hamburger Menu */}
         <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
