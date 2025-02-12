@@ -6,11 +6,9 @@ import GreenTop1 from "../../assets/greentop.jpg";
 import GreenTop2 from "../../assets/greentop2.jpg";
 import Agave1 from "../../assets/agave.jpg";
 import Agave2 from "../../assets/agave2.jpg";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
 const Properties = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-
   // Image data for each property
   const properties = [
     {
@@ -27,8 +25,11 @@ const Properties = () => {
     }
   ];
 
-  // State to track which image is shown for each property
+  // State for tracking current image in each property
   const [currentIndexes, setCurrentIndexes] = useState(properties.map(() => 0));
+
+  // Lightbox state
+  const [lightbox, setLightbox] = useState({ isOpen: false, propertyIndex: 0 });
 
   const nextImage = (index) => {
     setCurrentIndexes((prev) =>
@@ -42,12 +43,31 @@ const Properties = () => {
     );
   };
 
-  const openLightbox = (image) => {
-    setSelectedImage(image);
+  // Open lightbox for a property
+  const openLightbox = (propertyIndex) => {
+    setLightbox({ isOpen: true, propertyIndex });
   };
 
+  // Close lightbox
   const closeLightbox = () => {
-    setSelectedImage(null);
+    setLightbox({ isOpen: false, propertyIndex: 0 });
+  };
+
+  // Switch images inside the lightbox
+  const nextLightboxImage = () => {
+    setCurrentIndexes((prev) =>
+      prev.map((val, i) =>
+        i === lightbox.propertyIndex ? (val + 1) % properties[i].images.length : val
+      )
+    );
+  };
+
+  const prevLightboxImage = () => {
+    setCurrentIndexes((prev) =>
+      prev.map((val, i) =>
+        i === lightbox.propertyIndex ? (val - 1 + properties[i].images.length) % properties[i].images.length : val
+      )
+    );
   };
 
   return (
@@ -64,7 +84,7 @@ const Properties = () => {
                 className='image-property' 
                 src={property.images[currentIndexes[index]]} 
                 alt={`Property ${property.name}`} 
-                onClick={() => openLightbox(property.images[currentIndexes[index]])} 
+                onClick={() => openLightbox(index)} 
               />
               <FaChevronRight className="arrow right" onClick={() => nextImage(index)} />
             </div>
@@ -73,10 +93,13 @@ const Properties = () => {
       </div>
 
       {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={closeLightbox}>
+      {lightbox.isOpen && (
+        <div className="lightbox">
           <div className="lightbox-content">
-            <img src={selectedImage} alt="Large View" />
+            <FaTimes className="close-icon" onClick={closeLightbox} />
+            <FaChevronLeft className="lightbox-arrow left" onClick={prevLightboxImage} />
+            <img src={properties[lightbox.propertyIndex].images[currentIndexes[lightbox.propertyIndex]]} alt="Large View" />
+            <FaChevronRight className="lightbox-arrow right" onClick={nextLightboxImage} />
           </div>
         </div>
       )}

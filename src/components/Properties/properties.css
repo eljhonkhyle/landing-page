@@ -34,8 +34,8 @@
 
 /* Property Name Styling */
 .property-name {
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     font-size: 14px;
     font-weight: bold;
     color: #333;
@@ -55,7 +55,7 @@
 }
 
 /* Arrows for switching images */
-.arrow {
+.arrow, .lightbox-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -66,11 +66,9 @@
     cursor: pointer;
     font-size: 13px;
     transition: background 0.3s;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
-.arrow:hover {
+.arrow:hover, .lightbox-arrow:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -110,16 +108,32 @@
     z-index: 1000;
 }
 
+/* Lightbox content */
+.lightbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .lightbox-content img {
     width: auto;
-    max-width: 90%;
+    max-width: 100%;
     max-height: 90vh;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Close button */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    margin-right: 7px; 
+    font-size: 20px;
+    color: #333;
     cursor: pointer;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .card-container {
         flex-direction: column;
@@ -130,8 +144,8 @@
         width: 90%;
     }
 
-    .arrow {
+    .arrow, .lightbox-arrow {
         font-size: 16px;
-        padding: 3px;
+        padding: 5px;
     }
 }
