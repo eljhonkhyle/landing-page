@@ -3,8 +3,8 @@ import "./header.css";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
-
 import logo1 from '../../assets/logo1.png'
+import Properties from "../Properties/Properties"
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -54,6 +54,7 @@ const Header = () => {
       <div id="home">
         <Hero />
         <Carousel />
+        <Properties/>
       </div>
       <div id="amenities"><h2></h2></div>
       <div id="schedule"><h2></h2></div>
