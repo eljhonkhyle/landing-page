@@ -6,21 +6,24 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import React from "react";
 import "./carousel.css"; // Import the separate CSS file
+import Image1 from "../../assets/image1.jpg"
+import Image2 from "../../assets/image2.jpg"
+import Image3 from "../../assets/image3.jpg"
 
 const Carousel = () => {
   const slides = [
     {
-      image: "src/assets/image1.jpg",
+      image: Image1,
       title: "Lorem Ipsum",
       description: "Occaecat nulla mollit sunt aute id ex est occaecat eiusmod laboris non occaecat sit. Eu aliqua ea laboris id dolore exercitation et ullamco minim. Anim velit ex enim excepteur aliqua mollit aliquip elit sunt amet.",
     },
     {
-      image: "src/assets/image2.jpg",
+      image: Image2,
       title: "Lorem Ipsum",
       description: "Occaecat nulla mollit sunt aute id ex est occaecat eiusmod laboris non occaecat sit. Eu aliqua ea laboris id dolore exercitation et ullamco minim. Anim velit ex enim excepteur aliqua mollit aliquip elit sunt amet.",
     },
     {
-      image: "src/assets/image3.jpg",
+      image: Image3,
       title: "Lorem Ipsum",
       description: "Occaecat nulla mollit sunt aute id ex est occaecat eiusmod laboris non occaecat sit. Eu aliqua ea laboris id dolore exercitation et ullamco minim. Anim velit ex enim excepteur aliqua mollit aliquip elit sunt amet.",
     },
