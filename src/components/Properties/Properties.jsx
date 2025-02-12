@@ -14,14 +14,17 @@ const Properties = () => {
     {
       name: "10951 Mustang Spring",
       images: [Mustang1, Mustang2],
+      description: "A vibrant community with excellent amenities nearby.",
     },
     {
       name: "6308 Green Top Dr",
       images: [GreenTop1, GreenTop2],
+      description: "Comfortable and spacious rooms in a peaceful area.",
     },
     {
       name: "7613 Agave Bnd",
       images: [Agave1, Agave2],
+      description: "Ideal for those looking for a quiet and convenient living space.",
     }
   ];
 
@@ -77,7 +80,8 @@ const Properties = () => {
       <div className='card-container'>
         {properties.map((property, index) => (
           <div className='card' key={index}>
-            <h2 className='property-name'>{property.name}</h2>
+            <h2 className='property-name'>{property.name} </h2>
+            <p className='property-description'>{property.description}</p>
             <div className="image-container">
               <FaChevronLeft className="arrow left" onClick={() => prevImage(index)} />
               <img 
