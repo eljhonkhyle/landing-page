@@ -17,10 +17,10 @@ section {
 
   .why-choose {
     flex-grow: 1; /* Allows it to expand */
-        /* Takes full width within available space */
+    padding: 1rem;  /* Takes full width within available space */
     color: #a2b5cd;
     line-height: 2rem;
-    margin-right: 2rem;
+    
   }
   
   .why-choose h2 {
@@ -36,12 +36,33 @@ section {
   
 
   .footer-logo {
-    margin-left: 2rem;
+    padding: 2rem;
     max-width: 120px; /* Adjust the width to fit well */
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensures proper scaling */
   }
   
+   /* Medium Screen Adjustments */
+   @media (min-width: 620px) and (max-width: 900px) {
+    footer.top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+    }
+    
+    footer.bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+      margin-left: 2rem;
+    }
+
+    footer.bottom .links {
+        display: flex;
+        gap: 18px;
+      }
+  }
   /* Responsive: Adjust layout on smaller screens */
   @media (max-width: 620px) {
     footer {
@@ -86,7 +107,7 @@ section {
     padding: 20px 0;
     justify-content: space-between;
     display: flex;
-    width: 100%;
+    
     position: relative; /* Allows flexible positioning */
   }
   
