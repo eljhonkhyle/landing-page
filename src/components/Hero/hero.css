@@ -34,6 +34,11 @@
     line-height: 2rem;
 }
 
+.about2 {
+    margin-top: 1rem;
+    line-height: 2rem;
+}
+
 /* Responsive: Stack items on smaller screens */
 @media (max-width: 768px) {
     .hero-section {
