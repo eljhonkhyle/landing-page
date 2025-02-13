@@ -10,7 +10,7 @@
 
 .amenities-section h2 {
     font-size: 2rem;
-    color: #005163;
+    color: #414e7a;
     margin-bottom: 3rem;
     text-align: center;
 
@@ -68,7 +68,7 @@
 .amenity-item svg {
     font-size: 1.5rem;
     margin-right: 10px;
-    color: #007b8f;
+    color: #414e7a;
 }
 
 /* --- Responsive Design (Mobile) --- */

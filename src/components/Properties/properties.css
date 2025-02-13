@@ -5,6 +5,10 @@
     padding: 20px;
 }
 
+.properties-container h1 {
+    color: #414e7a;
+}
+
 /* Flex container for horizontal alignment */
 .card-container {
     display: flex;
