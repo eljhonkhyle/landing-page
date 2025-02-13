@@ -1,65 +1,57 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./header.css";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
-import Logo from '../../assets/Logo1.png'
-import Hero from "../Hero/Hero";
-import Carousel from "../Carousel/Carousel";
-import Properties from "../Properties/Properties"
+import Logo from "../../assets/Logo1.png";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState("home");
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
-      <nav className="header">
-        {/* Logo */}
-        <img src={Logo} className="logo1" onClick={() => setActiveSection("home")}/>
+    <nav className="header">
+      {/* Logo */}
+      <img
+        src={Logo}
+        className="logo1"
+        alt="Company Logo"
+        onClick={() => setIsMenuOpen(false)}
+      />
 
-        {/* Hamburger Menu */}
-        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-
-        {/* Navigation Links */}
-        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <li
-            className={activeSection === "home" ? "active" : ""}
-            onClick={() => { setActiveSection("home"); setIsMenuOpen(false); }}
-          >
-            <a href="#home">Home</a>
-          </li>
-          <li
-            className={activeSection === "amenities" ? "active" : ""}
-            onClick={() => { setActiveSection("amenities"); setIsMenuOpen(false); }}
-          >
-            <a href="#amenities">Amenities</a>
-          </li>
-          <li
-            className={activeSection === "schedule" ? "active" : ""}
-            onClick={() => { setActiveSection("schedule"); setIsMenuOpen(false); }}
-          >
-            <a href="#schedule">Schedule</a>
-          </li>
-          <li
-            className={activeSection === "contact" ? "active" : ""}
-            onClick={() => { setActiveSection("contact"); setIsMenuOpen(false); }}
-          >
-            <a href="#contact">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Sections */}
-      <div id="home">
-        <Hero />
-        <Carousel />
-        <Properties/>
+      {/* Hamburger Menu */}
+      <div
+        className="hamburger"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle menu"
+        aria-expanded={isMenuOpen}
+        role="button"
+      >
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
-      <div id="amenities"><h2></h2></div>
-      <div id="schedule"><h2></h2></div>
-      <div id="contact"><h2></h2></div>
-    </div>
+
+      {/* Navigation Links */}
+      <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+        <li>
+          <NavLink to="/home" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setIsMenuOpen(false)}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/amenities" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setIsMenuOpen(false)}>
+            Amenities
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/schedule" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setIsMenuOpen(false)}>
+            Schedule
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setIsMenuOpen(false)}>
+            Contact Us
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

@@ -1,20 +1,21 @@
 /* --- General Header Styles --- */
 .header {
-    padding: 0;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 /* --- Logo --- */
 .logo1 {
-    width: 250px;  /* Increase width */
-    height: auto;  /* Maintain aspect ratio */
-    max-height: 100;/* Increase max height */
+    width: 200px;  /* Adjusted for better responsiveness */
+    height: auto;  
+    max-height: 200px; /* Fixed missing px */
     cursor: pointer;
     display: block;
     object-fit: contain;
@@ -23,8 +24,8 @@
 /* --- Navigation Links (Default for Larger Screens) --- */
 .nav-links {
     list-style: none;
-    display: flex;  /* Ensure it's visible on desktop */
-    gap: 20px;
+    display: flex;
+    gap: 10px;
     padding: 0;
     margin: 0;
     cursor: pointer;
@@ -44,11 +45,12 @@
     text-decoration: none;
     font-size: 1rem;
     color: black;
+    padding: 8px 12px;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 /* --- Active Section Highlight (Persistent) --- */
-.nav-links .active a {
+.nav-links .active{
     background-color: #005163 !important;
     color: white !important;
     padding: 8px 12px;
@@ -57,18 +59,18 @@
 }
 
 /* --- Hover Effect (Only on Inactive Items) --- */
-.nav-links li:not(.active):hover {
+.nav-links li:not(:has(a.active)):hover {
     background-color: rgba(0, 81, 99, 0.8);
     border-radius: 6px;
 }
 
-.nav-links li:not(.active):hover a {
+.nav-links li:not(:has(a.active)):hover a {
     color: white;
 }
 
 /* --- Hamburger Menu (Hidden on Desktop) --- */
 .hamburger {
-    margin-right: 2rem;
+    margin-right: 3rem;
     display: none;
     font-size: 2rem;
     cursor: pointer;
@@ -87,11 +89,12 @@
         background: rgba(0, 81, 99, 0.9);
         position: absolute;
         top: 80px;
-        right: 0;
-        width: 200px;
+        right: 20px;
+        width: 220px;
         border-radius: 8px;
         text-align: center;
         padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     .nav-links.open {
@@ -99,7 +102,7 @@
     }
 
     .nav-links li {
-        padding: 10px 0;
+        padding: 12px 0;
     }
 
     .nav-links a {
@@ -107,7 +110,7 @@
         font-size: 1rem;
     }
 
-    .nav-links .active a {
+    .nav-links .active {
         background-color: white !important;
         color: #005163 !important;
     }

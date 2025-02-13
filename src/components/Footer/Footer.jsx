@@ -44,7 +44,7 @@ const Footer = () => {
       {/* Bottom Footer */}
       <footer className="bottom">
         <div className="legal">
-          <span>© 2023 Havoc Properties | All rights reserved</span>
+          <span>© 2025 Havoc Properties | All rights reserved</span>
           <a>License</a>
           <a>Terms</a>
           <a>Privacy</a>

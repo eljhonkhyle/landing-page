@@ -1,0 +1,84 @@
+/* --- Amenities Section --- */
+.amenities-section {
+    
+    text-align: left;
+    background-color: #f8f9fa;
+    margin-top: 200px;
+    width: 100%;
+}
+
+.amenities-section h2 {
+    font-size: 2rem;
+    color: #005163;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+
+/* --- Grid Layout --- */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* --- Property Card --- */
+.property-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Property Name --- */
+.property-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* --- Amenities List --- */
+.property-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #005163;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+/* --- Icons --- */
+.amenity-item svg {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #007b8f;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 992px) {
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+}

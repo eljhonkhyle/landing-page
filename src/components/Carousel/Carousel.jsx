@@ -35,8 +35,9 @@ const Carousel = () => {
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
+      slidesPerView={1}
       className="carousel-container"
     >
       {slides.map((slide, index) => (

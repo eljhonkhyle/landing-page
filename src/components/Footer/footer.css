@@ -44,7 +44,7 @@ section {
   }
   
    /* Medium Screen Adjustments */
-   @media (min-width: 620px) and (max-width: 900px) {
+   @media (min-width: 620px) and (max-width: 1024px) {
     footer.top {
       flex-direction: column;
       align-items: center;
@@ -73,7 +73,7 @@ section {
     }
   
     footer.bottom {
-      gap: 16px;
+      gap: 15px;
       flex-direction: column-reverse;
     }
   }
