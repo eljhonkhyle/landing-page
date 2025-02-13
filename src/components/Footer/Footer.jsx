@@ -35,9 +35,9 @@ const Footer = () => {
         {/* Why Choose Us Section */}
         <div className="why-choose">
           <h2>Why Choose Havoc Properties?</h2>
-          <p><strong>📍 Personalized Tours:</strong> See your future living space before you decide.</p>
-          <p><strong>🏡 Prime Locations:</strong> Easy access to local amenities, schools, and transportation.</p>
-          <p><strong>💰 Affordable Options:</strong> Quality rooms that suit your budget.</p>
+          <p><strong>📍 Personalized Tours:</strong> <br></br>See your future living space before you decide.</p>
+          <p><strong>🏡 Prime Locations:</strong> <br></br>Easy access to local amenities, schools, and transportation.</p>
+          <p><strong>💰 Affordable Options:</strong> <br></br>Quality rooms that suit your budget.</p>
         </div>
       </footer>
 
