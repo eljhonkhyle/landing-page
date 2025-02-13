@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import {FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa"; // Import FontAwesome icons
-import Logo from "../../../public/Logo.png";
+import Logo from "/Logo.png";
 
 const Footer = () => {
   return (
