@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop'; // Import this
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Navbar/Header';
 import Hero from './components/Hero/Hero';
 import Carousel from './components/Carousel/Carousel';
