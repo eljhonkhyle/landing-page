@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./header.css";
-import Carousel from "../Carousel/Carousel";
-import Hero from "../Hero/Hero";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
 import Logo from '../../assets/Logo1.png'
+import Hero from "../Hero/Hero";
+import Carousel from "../Carousel/Carousel";
 import Properties from "../Properties/Properties"
 
 const Header = () => {
