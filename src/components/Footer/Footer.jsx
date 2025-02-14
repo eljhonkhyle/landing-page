@@ -45,9 +45,9 @@ const Footer = () => {
       <footer className="bottom">
         <div className="legal">
           <span>© 2025 Havoc Properties | All rights reserved</span>
-          <a>License</a>
-          <a>Terms</a>
-          <a>Privacy</a>
+          <a href="#">License</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
         </div>
         <div className="links">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

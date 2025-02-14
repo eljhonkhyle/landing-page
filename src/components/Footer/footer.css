@@ -18,7 +18,6 @@ section {
 
   .why-choose {
     flex-grow: 1; /* Allows it to expand */
-    padding-right: 1.5rem;  /* Takes full width within available space */
     color: #a2b5cd;
     line-height: 2rem;
     
