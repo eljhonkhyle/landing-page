@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./properties.css";
 import Mustang1 from "../../assets/mustang.jpg";
 import Mustang2 from "../../assets/mustang2.jpg";
@@ -24,8 +24,9 @@ const Properties = () => {
     {
       name: "7613 Agave Bnd",
       images: [Agave1, Agave2],
-      description: "Ideal for those looking for a quiet and convenient living space.",
-    }
+      description:
+        "Ideal for those looking for a quiet and convenient living space.",
+    },
   ];
 
   // State for tracking current image in each property
@@ -36,13 +37,20 @@ const Properties = () => {
 
   const nextImage = (index) => {
     setCurrentIndexes((prev) =>
-      prev.map((val, i) => (i === index ? (val + 1) % properties[i].images.length : val))
+      prev.map((val, i) =>
+        i === index ? (val + 1) % properties[i].images.length : val
+      )
     );
   };
 
   const prevImage = (index) => {
     setCurrentIndexes((prev) =>
-      prev.map((val, i) => (i === index ? (val - 1 + properties[i].images.length) % properties[i].images.length : val))
+      prev.map((val, i) =>
+        i === index
+          ? (val - 1 + properties[i].images.length) %
+            properties[i].images.length
+          : val
+      )
     );
   };
 
@@ -60,7 +68,9 @@ const Properties = () => {
   const nextLightboxImage = () => {
     setCurrentIndexes((prev) =>
       prev.map((val, i) =>
-        i === lightbox.propertyIndex ? (val + 1) % properties[i].images.length : val
+        i === lightbox.propertyIndex
+          ? (val + 1) % properties[i].images.length
+          : val
       )
     );
   };
@@ -68,29 +78,38 @@ const Properties = () => {
   const prevLightboxImage = () => {
     setCurrentIndexes((prev) =>
       prev.map((val, i) =>
-        i === lightbox.propertyIndex ? (val - 1 + properties[i].images.length) % properties[i].images.length : val
+        i === lightbox.propertyIndex
+          ? (val - 1 + properties[i].images.length) %
+            properties[i].images.length
+          : val
       )
     );
   };
 
   return (
-    <div className='properties-container'>
+    <div className="properties-container">
       <h1>Available Properties in San Antonio, Texas.</h1>
-      
-      <div className='card-container'>
+
+      <div className="card-container">
         {properties.map((property, index) => (
-          <div className='card' key={index}>
-            <h2 className='property-name'>{property.name} </h2>
-            <p className='property-description'>{property.description}</p>
+          <div className="card" key={index}>
+            <h2 className="property-name">{property.name} </h2>
+            <p className="property-description">{property.description}</p>
             <div className="image-container">
-              <FaChevronLeft className="arrow left" onClick={() => prevImage(index)} />
-              <img 
-                className='image-property' 
-                src={property.images[currentIndexes[index]]} 
-                alt={`Property ${property.name}`} 
-                onClick={() => openLightbox(index)} 
+              <FaChevronLeft
+                className="arrow left"
+                onClick={() => prevImage(index)}
               />
-              <FaChevronRight className="arrow right" onClick={() => nextImage(index)} />
+              <img
+                className="image-property"
+                src={property.images[currentIndexes[index]]}
+                alt={`Property ${property.name}`}
+                onClick={() => openLightbox(index)}
+              />
+              <FaChevronRight
+                className="arrow right"
+                onClick={() => nextImage(index)}
+              />
             </div>
           </div>
         ))}
@@ -101,9 +120,22 @@ const Properties = () => {
         <div className="lightbox">
           <div className="lightbox-content">
             <FaTimes className="close-icon" onClick={closeLightbox} />
-            <FaChevronLeft className="lightbox-arrow left" onClick={prevLightboxImage} />
-            <img src={properties[lightbox.propertyIndex].images[currentIndexes[lightbox.propertyIndex]]} alt="Large View" />
-            <FaChevronRight className="lightbox-arrow right" onClick={nextLightboxImage} />
+            <FaChevronLeft
+              className="lightbox-arrow left"
+              onClick={prevLightboxImage}
+            />
+            <img
+              src={
+                properties[lightbox.propertyIndex].images[
+                  currentIndexes[lightbox.propertyIndex]
+                ]
+              }
+              alt="Large View"
+            />
+            <FaChevronRight
+              className="lightbox-arrow right"
+              onClick={nextLightboxImage}
+            />
           </div>
         </div>
       )}

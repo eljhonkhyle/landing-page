@@ -1,0 +1,33 @@
+/* Feedback Section */
+.feedback-section {
+  padding: 3rem 1rem;
+  background-color: #f7f7f7;
+  text-align: center;
+  margin-bottom: -3rem;
+}
+
+/* Swiper Container */
+.feedback-swiper {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Swiper Slide Styling */
+.feedback-slide {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  text-align: center;
+  transition: transform 0.4s ease-in-out;
+  width: 400px; /* Ensures proper size for auto centering */
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+
+/* Star Rating */
+.star-rating svg {
+  color: #fbbf24;
+}
