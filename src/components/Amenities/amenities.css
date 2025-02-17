@@ -1,85 +1,88 @@
 /* --- Amenities Section --- */
 .amenities-section {
-    text-align: left;
-    background-color: #f8f9fa;
-    margin-top: 100px;
-    width: 100%;
-    line-height: 2rem;
-    padding-bottom: 3rem;
+  text-align: left;
+  background-color: #f8f9fa;
+  margin-top: 100px;
+  width: 100%;
+  line-height: 2rem;
+  padding-bottom: 100px;
+  margin-bottom: -3rem;
 }
 
 .amenities-section h2 {
-    font-size: 2rem;
-    color: #085668;
-    margin-bottom: 3rem;
-    text-align: center;
-
+  font-size: 2rem;
+  color: #085668;
+  margin-bottom: 3rem;
+  text-align: center;
+  margin-top: 1.25rem;
 }
 
 /* --- Grid Layout --- */
 .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
 }
 
 /* --- Property Card --- */
 .property-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .property-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Property Name --- */
 .property-card h3 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 30px;
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 /* --- Amenities List --- */
 .property-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 5rem;
 }
 
 .amenity-item {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    margin: 10px 0;
-    font-weight: 500; 
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
 /* --- Icons --- */
 .amenity-item svg {
-    font-size: 1.5rem;
-    margin-right: 10px;
-    color: #085668;
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #085668;
 }
 
 /* --- Responsive Design (Mobile) --- */
 @media (max-width: 992px) {
-    .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-    .amenities-grid {
-        grid-template-columns: 1fr;
-    }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
 }
