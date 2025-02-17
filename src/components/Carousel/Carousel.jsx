@@ -7,9 +7,9 @@ import "swiper/css/pagination";
 import React from "react";
 import "./carousel.css"; // Import the separate CSS file
 import { FaBath, FaBed } from "react-icons/fa";
-import Image1 from "../../assets/image1.jpg"
-import Image2 from "../../assets/image2.jpg"
-import Image3 from "../../assets/image3.jpg"
+import Image1 from "../../assets/image1.webp";
+import Image2 from "../../assets/image2.webp";
+import Image3 from "../../assets/image3.webp";
 
 const properties = [
   {
@@ -48,11 +48,20 @@ const RealEstateCarousel = () => {
     >
       {properties.map((property) => (
         <SwiperSlide key={property.id} className="carousel-slide">
-          <img src={property.image} alt={property.name} className="carousel-image" />
+          <img
+            src={property.image}
+            alt={property.name}
+            className="carousel-image"
+          />
           <div className="carousel-text">
             <h2>{property.name}</h2>
             <p>{property.location}</p>
-            <p> <FaBed className="inline mr-1" /> {property.amenities.beds} Beds | <FaBath className="inline ml-2 mr-1" /> {property.amenities.baths} Baths</p>
+            <p>
+              {" "}
+              <FaBed className="inline mr-1" /> {property.amenities.beds} Beds |{" "}
+              <FaBath className="inline ml-2 mr-1" /> {property.amenities.baths}{" "}
+              Baths
+            </p>
           </div>
         </SwiperSlide>
       ))}

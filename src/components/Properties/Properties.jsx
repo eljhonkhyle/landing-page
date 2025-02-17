@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import "./properties.css";
-import Mustang1 from "../../assets/mustang.jpg";
-import Mustang2 from "../../assets/mustang2.jpg";
-import GreenTop1 from "../../assets/greentop.jpg";
-import GreenTop2 from "../../assets/greentop2.jpg";
-import Agave1 from "../../assets/agave.jpg";
-import Agave2 from "../../assets/agave2.jpg";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
+// Import images (Ensure they are optimized and in WebP format)
+import Mustang1 from "../../assets/mustang.webp";
+import Mustang2 from "../../assets/mustang2.webp";
+import GreenTop1 from "../../assets/greentop.webp";
+import GreenTop2 from "../../assets/greentop2.webp";
+import Agave1 from "../../assets/agave.webp";
+import Agave2 from "../../assets/agave2.webp";
+
 const Properties = () => {
-  // Image data for each property
   const properties = [
     {
       name: "10951 Mustang Spring",
@@ -29,61 +30,47 @@ const Properties = () => {
     },
   ];
 
-  // State for tracking current image in each property
-  const [currentIndexes, setCurrentIndexes] = useState(properties.map(() => 0));
+  const [currentIndexes, setCurrentIndexes] = useState(
+    new Array(properties.length).fill(0)
+  );
 
-  // Lightbox state
   const [lightbox, setLightbox] = useState({ isOpen: false, propertyIndex: 0 });
+  const [slideDirections, setSlideDirections] = useState(
+    new Array(properties.length).fill(null)
+  );
 
-  const nextImage = (index) => {
-    setCurrentIndexes((prev) =>
+  const changeImage = (index, direction) => {
+    // Set the direction for the specific property image
+    setSlideDirections((prev) =>
       prev.map((val, i) =>
-        i === index ? (val + 1) % properties[i].images.length : val
+        i === index ? (direction === 1 ? "right" : "left") : val
       )
     );
-  };
 
-  const prevImage = (index) => {
+    // Change the image index with wraparound logic
     setCurrentIndexes((prev) =>
       prev.map((val, i) =>
         i === index
-          ? (val - 1 + properties[i].images.length) %
+          ? (val + direction + properties[i].images.length) %
             properties[i].images.length
           : val
       )
     );
+
+    // Reset the sliding direction after the animation is completed
+    setTimeout(() => {
+      setSlideDirections((prev) =>
+        prev.map((val, i) => (i === index ? null : val))
+      );
+    }, 500); // Match the transition duration
   };
 
-  // Open lightbox for a property
   const openLightbox = (propertyIndex) => {
     setLightbox({ isOpen: true, propertyIndex });
   };
 
-  // Close lightbox
   const closeLightbox = () => {
     setLightbox({ isOpen: false, propertyIndex: 0 });
-  };
-
-  // Switch images inside the lightbox
-  const nextLightboxImage = () => {
-    setCurrentIndexes((prev) =>
-      prev.map((val, i) =>
-        i === lightbox.propertyIndex
-          ? (val + 1) % properties[i].images.length
-          : val
-      )
-    );
-  };
-
-  const prevLightboxImage = () => {
-    setCurrentIndexes((prev) =>
-      prev.map((val, i) =>
-        i === lightbox.propertyIndex
-          ? (val - 1 + properties[i].images.length) %
-            properties[i].images.length
-          : val
-      )
-    );
   };
 
   return (
@@ -93,22 +80,27 @@ const Properties = () => {
       <div className="card-container">
         {properties.map((property, index) => (
           <div className="card" key={index}>
-            <h2 className="property-name">{property.name} </h2>
+            <h2 className="property-name">{property.name}</h2>
             <p className="property-description">{property.description}</p>
-            <div className="image-container">
+            <div
+              className={`image-container ${
+                slideDirections[index] ? `slide-${slideDirections[index]}` : ""
+              }`}
+            >
               <FaChevronLeft
                 className="arrow left"
-                onClick={() => prevImage(index)}
+                onClick={() => changeImage(index, -1)}
               />
               <img
                 className="image-property"
                 src={property.images[currentIndexes[index]]}
                 alt={`Property ${property.name}`}
+                loading="lazy" // Lazy loading
                 onClick={() => openLightbox(index)}
               />
               <FaChevronRight
                 className="arrow right"
-                onClick={() => nextImage(index)}
+                onClick={() => changeImage(index, 1)}
               />
             </div>
           </div>
@@ -122,7 +114,7 @@ const Properties = () => {
             <FaTimes className="close-icon" onClick={closeLightbox} />
             <FaChevronLeft
               className="lightbox-arrow left"
-              onClick={prevLightboxImage}
+              onClick={() => changeImage(lightbox.propertyIndex, -1)}
             />
             <img
               src={
@@ -131,10 +123,11 @@ const Properties = () => {
                 ]
               }
               alt="Large View"
+              loading="lazy" // Lazy loading
             />
             <FaChevronRight
               className="lightbox-arrow right"
-              onClick={nextLightboxImage}
+              onClick={() => changeImage(lightbox.propertyIndex, 1)}
             />
           </div>
         </div>
