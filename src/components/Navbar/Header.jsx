@@ -59,6 +59,7 @@ const Header = () => {
         </li>
         <li>
           <a
+            href="https://calendar.app.google/GoJTJW7rJupQJR468"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-link" // Add this class for styling consistency
