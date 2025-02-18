@@ -5,15 +5,18 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to the top when navigating to a new page
+    // Scroll to top when navigating
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Force scroll to top on full page reload
+  // Force scroll to top on full page refresh
   useEffect(() => {
-    window.onload = () => {
+    const handleLoad = () => {
       window.scrollTo(0, 0);
     };
+
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   return null;
