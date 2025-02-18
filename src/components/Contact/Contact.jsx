@@ -26,7 +26,7 @@ const Contact = () => {
         We’d love to hear from you! Whether you have questions, need more
         details, or want to schedule a visit, we’re here to help. Reach out to
         us through the contact details below, and we’ll get back to you as soon
-        as possible. Your dream home is just a message away!
+        as possible.
       </p>
 
       <div className="contact__container container grid">
