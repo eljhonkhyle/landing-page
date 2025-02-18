@@ -9,7 +9,6 @@ import Properties from "./components/Properties/Properties";
 import Feedback from "./components/Feedback/FeedBack";
 import Footer from "./components/Footer/Footer";
 import Amenities from "./components/Amenities/Amenities";
-import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
 
 function Home() {
@@ -33,7 +32,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/amenities" element={<Amenities />} />
-        <Route path="/schedule" element={<Schedule />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 

@@ -58,14 +58,17 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/schedule"
-            className={({ isActive }) => (isActive ? "active" : "")}
+          <a
+            href="https://calendar.app.google/GoJTJW7rJupQJR468"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link" // Add this class for styling consistency
             onClick={() => setIsMenuOpen(false)}
           >
             Schedule
-          </NavLink>
+          </a>
         </li>
+
         <li>
           <NavLink
             to="/contact"

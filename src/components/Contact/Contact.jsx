@@ -81,7 +81,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 className="contact__form-input"
-                placeholder="management@havoc-properties-tx.com"
+                placeholder="johndoe@gmail.com"
               />
             </div>
 

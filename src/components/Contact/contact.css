@@ -18,8 +18,8 @@
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .contact__content {
