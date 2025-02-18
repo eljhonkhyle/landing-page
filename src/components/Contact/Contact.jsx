@@ -22,12 +22,15 @@ const Contact = () => {
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get In Touch</h2>
-      <span className="section__subtitle"></span>
+      <p className="section__subtitle">
+        We’d love to hear from you! Whether you have questions, need more
+        details, or want to schedule a visit, we’re here to help. Reach out to
+        us through the contact details below, and we’ll get back to you as soon
+        as possible. Your dream home is just a message away!
+      </p>
 
       <div className="contact__container container grid">
         <div className="contact__content">
-          <h3 className="contact__title">Contact Us</h3>
-
           <div className="contact__info">
             <div className="contact__card">
               <div className="contact__card-icon">

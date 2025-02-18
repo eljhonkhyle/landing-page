@@ -4,15 +4,26 @@
   margin-top: 100px;
   margin-bottom: -3rem;
   padding-bottom: 100px;
+  width: 100%;
 }
 
 .section__title {
   font-size: 2rem;
-  text-align: center;
+  text-align: left;
   padding-top: 3rem;
   padding-bottom: 2rem;
   color: #085668;
-  margin: 0 auto;
+  margin: auto;
+  max-width: 85%;
+}
+
+.section__subtitle {
+  text-align: left;
+  line-height: 2rem;
+  margin: 10px auto;
+  color: #333;
+  max-width: 85%;
+  align-items: center;
 }
 
 .contact__container {
@@ -21,6 +32,7 @@
   grid-template-columns: 1fr 1fr;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+  padding-top: 2rem;
 }
 
 .contact__content {
@@ -32,8 +44,9 @@
 .contact__title {
   font-size: 1.5rem;
   color: #333;
-  text-align: center;
-  margin-top: 2rem;
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .contact__info {
