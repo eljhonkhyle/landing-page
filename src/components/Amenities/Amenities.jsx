@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  FaSwimmer,
-  FaCar,
-  FaTree,
   FaWifi,
   FaDumbbell,
   FaShieldAlt,
@@ -13,15 +10,23 @@ import {
   FaUtensils,
   FaUtensilSpoon,
   FaParking,
-  FaTemperatureHigh,
   FaHotTub,
+  FaRecycle,
+  FaBed,
 } from "react-icons/fa";
 import "./amenities.css";
-import { FaBucket, FaKitchenSet } from "react-icons/fa6";
-import { RiFridgeFill } from "react-icons/ri";
+import {
+  FaBucket,
+  FaKitchenSet,
+  FaPeopleRoof,
+  FaTemperatureFull,
+} from "react-icons/fa6";
+import { RiFridgeFill, RiHomeOfficeFill } from "react-icons/ri";
 import { PiOvenFill } from "react-icons/pi";
 import {
+  MdBrunchDining,
   MdCoffeeMaker,
+  MdFamilyRestroom,
   MdLocalLaundryService,
   MdMicrowave,
   MdTableBar,
@@ -29,31 +34,86 @@ import {
 } from "react-icons/md";
 import { TbAirConditioning, TbCooker, TbPlayFootball } from "react-icons/tb";
 import {
+  BiCloset,
   BiSolidBlanket,
   BiSolidCabinet,
-  BiSolidDryer,
   BiSolidFridge,
   BiSolidWasher,
 } from "react-icons/bi";
-import { GiPillow } from "react-icons/gi";
+import { GiPillow, GiWaterSplash, GiWoodBeam } from "react-icons/gi";
 import { LuAlarmSmoke } from "react-icons/lu";
 import { IoTvSharp } from "react-icons/io5";
+import { IoIosWater } from "react-icons/io";
 
 const properties = [
   {
     name: "10951 Mustang Spring",
     amenities: [
-      { icon: <FaSwimmer />, label: "Swimming Pool" },
-      { icon: <FaCar />, label: "Parking Garage" },
-      { icon: <FaTree />, label: "Garden Area" },
+      { icon: <TbAirConditioning />, label: "Air Conditioning" },
+      { icon: <IoTvSharp />, label: "Cable Ready" },
+      { icon: <BiSolidWasher />, label: "Washer/Dryer" },
+      { icon: <FaTemperatureFull />, label: "Heating" },
+      { icon: <MdCoffeeMaker />, label: "Coffee Maker" },
+      { icon: <FaFan />, label: "Ceiling Fans" },
+      { icon: <FaWifi />, label: "Wifi" },
+      { icon: <GiWaterSplash />, label: "Sprinkler" },
+      { icon: <LuAlarmSmoke />, label: "Smoke Alarm" },
+      { icon: <FaBath />, label: "Tub/Shower" },
+      { icon: <MdLocalLaundryService />, label: "Dishwasher" },
+      { icon: <FaRecycle />, label: "Disposal" },
+      { icon: <MdMicrowave />, label: "Microwave" },
+      { icon: <FaKitchenSet />, label: "Kitchen" },
+      { icon: <FaKitchenSet />, label: "Granite Countertops" },
+      { icon: <RiFridgeFill />, label: "Refrigerator" },
+      { icon: <FaUtensilSpoon />, label: "Stainless Steel Appliances" },
+      { icon: <BiSolidFridge />, label: "Freezer" },
+      { icon: <FaKitchenSet />, label: "Pantry" },
+      { icon: <MdYard />, label: "Yard" },
+      { icon: <GiWoodBeam />, label: "Hardwood Floors" },
+      { icon: <BiCloset />, label: "Walk-in Closets" },
+      { icon: <FaPeopleRoof />, label: "Attic" },
+      { icon: <MdBrunchDining />, label: "Dining Room" },
+      { icon: <MdFamilyRestroom />, label: "Family Room" },
+      { icon: <BiSolidBlanket />, label: "Linen Closet" },
+      { icon: <RiHomeOfficeFill />, label: "Office" },
+      { icon: <FaBed />, label: "Large Bedrooms" },
+      { icon: <GiPillow />, label: "Extra Pillows & Blankets" },
+      { icon: <IoIosWater />, label: "Water" },
     ],
   },
   {
     name: "6308 Green Top Dr",
     amenities: [
-      { icon: <FaWifi />, label: "High-Speed WiFi" },
-      { icon: <FaDumbbell />, label: "Gym & Fitness" },
-      { icon: <FaShieldAlt />, label: "24/7 Security" },
+      { icon: <TbAirConditioning />, label: "Air Conditioning" },
+      { icon: <IoTvSharp />, label: "Cable Ready" },
+      { icon: <BiSolidWasher />, label: "Washer/Dryer" },
+      { icon: <FaTemperatureFull />, label: "Heating" },
+      { icon: <MdCoffeeMaker />, label: "Coffee Maker" },
+      { icon: <FaFan />, label: "Ceiling Fans" },
+      { icon: <FaWifi />, label: "Wifi" },
+      { icon: <GiWaterSplash />, label: "Sprinkler" },
+      { icon: <LuAlarmSmoke />, label: "Smoke Alarm" },
+      { icon: <FaBath />, label: "Tub/Shower" },
+      { icon: <MdLocalLaundryService />, label: "Dishwasher" },
+      { icon: <FaRecycle />, label: "Disposal" },
+      { icon: <MdMicrowave />, label: "Microwave" },
+      { icon: <FaKitchenSet />, label: "Kitchen" },
+      { icon: <FaKitchenSet />, label: "Granite Countertops" },
+      { icon: <RiFridgeFill />, label: "Refrigerator" },
+      { icon: <FaUtensilSpoon />, label: "Stainless Steel Appliances" },
+      { icon: <BiSolidFridge />, label: "Freezer" },
+      { icon: <FaKitchenSet />, label: "Pantry" },
+      { icon: <MdYard />, label: "Yard" },
+      { icon: <GiWoodBeam />, label: "Hardwood Floors" },
+      { icon: <BiCloset />, label: "Walk-in Closets" },
+      { icon: <FaPeopleRoof />, label: "Attic" },
+      { icon: <MdBrunchDining />, label: "Dining Room" },
+      { icon: <MdFamilyRestroom />, label: "Family Room" },
+      { icon: <BiSolidBlanket />, label: "Linen Closet" },
+      { icon: <RiHomeOfficeFill />, label: "Office" },
+      { icon: <FaBed />, label: "Large Bedrooms" },
+      { icon: <GiPillow />, label: "Extra Pillows & Blankets" },
+      { icon: <IoIosWater />, label: "Water" },
     ],
   },
   {
@@ -81,13 +141,12 @@ const properties = [
       { icon: <MdTableBar />, label: "Dining Table" },
       { icon: <FaUtensilSpoon />, label: "Dishes and Silverware" },
       { icon: <MdLocalLaundryService />, label: "Dishwasher" },
-      { icon: <BiSolidDryer />, label: "Dryer" },
-      { icon: <GiPillow />, label: "Extra Pillows and Blankets" },
+      { icon: <GiPillow />, label: "Extra Pillows & Blankets" },
       { icon: <FaParking />, label: "Free Parking on Premises" },
       { icon: <BiSolidFridge />, label: "Freezer" },
-      { icon: <FaTemperatureHigh />, label: "Heating" },
+      { icon: <FaTemperatureFull />, label: "Heating" },
       { icon: <FaHotTub />, label: "Hot Water" },
-      { icon: <BiSolidWasher />, label: "Washer" },
+      { icon: <BiSolidWasher />, label: "Washer/Dryer" },
       { icon: <FaWifi />, label: "Wifi" },
     ],
   },
