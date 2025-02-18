@@ -84,7 +84,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 className="contact__form-input"
-                placeholder="johndoe@gmail.com"
+                placeholder="johndoe@example.com"
               />
             </div>
 
