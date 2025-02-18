@@ -159,8 +159,11 @@ const Amenities = () => {
       <p>
         Hello there! Enjoy our top-tier amenities designed to enhance your
         comfort and convenience. From modern living spaces to well-equipped
-        facilities, we ensure a seamless and enjoyable experience. Explore our
-        carefully curated features that make every moment at home truly special.
+        facilities, we ensure a seamless and enjoyable experience.
+      </p>
+      <p className="description">
+        Explore our carefully curated features that make every moment at home
+        truly special.
       </p>
       <div className="amenities-grid">
         {properties.map((property, index) => (

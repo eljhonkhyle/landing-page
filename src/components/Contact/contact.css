@@ -9,9 +9,10 @@
 .section__title {
   font-size: 2rem;
   text-align: center;
-  margin-top: 1.25rem;
-  margin-bottom: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   color: #085668;
+  margin: 0 auto;
 }
 
 .contact__container {
