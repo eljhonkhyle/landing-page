@@ -147,8 +147,7 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
-  transition: background-color 0.3s;
-  width: 100%;
+  max-width: 300px; /* Limits button width */
 }
 
 .button--flex {
@@ -166,6 +165,7 @@
 @media (max-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .contact__title {
