@@ -29,9 +29,9 @@
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
   padding-top: 2rem;
+  max-width: 100%; /* Prevents overflow */
+  overflow-x: hidden;
 }
 
 .contact__content {
