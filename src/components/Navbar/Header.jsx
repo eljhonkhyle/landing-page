@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../assets/Logo1.png";
+import Schedule from "../Schedule/Schedule";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,15 +59,13 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <a
-            href="https://calendar.app.google/GoJTJW7rJupQJR468"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link" // Add this class for styling consistency
+          <NavLink
+            to="/schedule"
+            className={({ isActive }) => (isActive ? "active" : "")}
             onClick={() => setIsMenuOpen(false)}
           >
             Schedule
-          </a>
+          </NavLink>
         </li>
 
         <li>

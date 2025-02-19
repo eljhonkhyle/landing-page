@@ -4,6 +4,7 @@
   margin-top: 100px;
   margin-bottom: -3rem;
   padding-bottom: 100px;
+  width: 100%;
 }
 
 .section__title {
@@ -12,7 +13,7 @@
   padding-top: 3rem;
   padding-bottom: 2rem;
   color: #085668;
-  margin: 0 auto;
+  margin: auto;
   max-width: 85%;
 }
 
@@ -32,6 +33,8 @@
   padding-top: 2rem;
   max-width: 100%; /* Prevents overflow */
   overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .contact__content {
@@ -165,7 +168,6 @@
 @media (max-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
   .contact__title {
