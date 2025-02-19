@@ -4,23 +4,23 @@ import "./styles/referralform.css";
 
 const ReferralForm = () => {
   const [friendEmail, setFriendEmail] = useState("");
-  const [referrerName, setReferrerName] = useState(""); // New state for referrer's name
+  const [referrerName, setReferrerName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (friendEmail.trim() !== "" && referrerName.trim() !== "") {
       const templateParams = {
-        to_email: friendEmail, // Friend's email (recipient)
-        from_name: referrerName, // Referrer's name
+        to_email: friendEmail,
+        from_name: referrerName,
       };
 
       emailjs
         .send(
-          "service_suawm0s", // Replace with your EmailJS service ID
-          "template_5aivm3p", // Replace with your EmailJS template ID
+          "service_suawm0s",
+          "template_5aivm3p",
           templateParams,
-          "5fZg2XH9aUXBtyOP6" // Replace with your EmailJS user/public key
+          "5fZg2XH9aUXBtyOP6"
         )
         .then(
           (response) => {

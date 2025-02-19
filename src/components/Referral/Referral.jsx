@@ -8,7 +8,6 @@ const Referral = () => {
 
   return (
     <div className="referral-section">
-      {/* Left Side - Message */}
       <div className="referral-message">
         <h2>
           Wouldn't it be great if your friends lived in your neighborhood?
@@ -18,7 +17,6 @@ const Referral = () => {
         </p>
       </div>
 
-      {/* Right Side - Referral Form */}
       <ReferralForm onRefer={addReferral} />
     </div>
   );
