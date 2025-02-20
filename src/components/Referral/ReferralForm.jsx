@@ -3,16 +3,22 @@ import emailjs from "@emailjs/browser";
 import "./styles/referralform.css";
 
 const ReferralForm = () => {
-  const [friendEmail, setFriendEmail] = useState("");
+  const [referralEmail, setReferralEmail] = useState("");
   const [referrerName, setReferrerName] = useState("");
+  const [referralName, setReferralName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (friendEmail.trim() !== "" && referrerName.trim() !== "") {
+    if (
+      referralEmail.trim() !== "" &&
+      referrerName.trim() !== "" &&
+      referrerName.trim() !== ""
+    ) {
       const templateParams = {
-        to_email: friendEmail,
-        from_name: referrerName,
+        referrer_name: referrerName,
+        referral_email: referralEmail,
+        referral_name: referralName,
       };
 
       emailjs
@@ -25,8 +31,9 @@ const ReferralForm = () => {
         .then(
           (response) => {
             alert("Referral email sent successfully!");
-            setFriendEmail("");
-            setReferrerName(""); // Reset both fields
+            setReferrerName("");
+            setReferralName(""); // Reset both fields
+            setReferralEmail("");
           },
           (error) => {
             console.error("Error sending email:", error);
@@ -50,14 +57,25 @@ const ReferralForm = () => {
           className="referral-input"
           required
         />
-        <input
-          type="email"
-          placeholder="Friend's email"
-          value={friendEmail}
-          onChange={(e) => setFriendEmail(e.target.value)}
-          className="referral-input"
-          required
-        />
+
+        <div className="referral-info">
+          <input
+            type="text"
+            placeholder="Friend's Name"
+            value={referralName}
+            onChange={(e) => setReferralName(e.target.value)}
+            className="referral-input"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Friend's email"
+            value={referralEmail}
+            onChange={(e) => setReferralEmail(e.target.value)}
+            className="referral-input"
+            required
+          />
+        </div>
         <button type="submit" className="referral-submit-btn">
           Send Referral
         </button>
