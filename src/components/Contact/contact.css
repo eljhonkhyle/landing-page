@@ -1,9 +1,9 @@
 .contact {
   padding: 50px 0;
   background-color: #f9f9f9;
+  margin-top: 100px;
   margin-bottom: -3rem;
   padding-bottom: 100px;
-  margin: 100px auto;
   width: 100%;
 }
 
@@ -168,7 +168,6 @@
 @media (max-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
   .contact__title {
@@ -176,6 +175,53 @@
   }
 
   .contact__form-input {
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Additional Styles for Small Devices (Phones and Narrow Screens) */
+@media (max-width: 480px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+    gap: 15px;
+  }
+
+  .section__title {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  .section__subtitle {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .contact__title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .contact__form {
+    gap: 15px;
+    padding: 0;
+  }
+
+  .contact__form-input {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .contact__card {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    padding: 10px;
     font-size: 0.9rem;
   }
 }
