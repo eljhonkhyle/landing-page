@@ -1,11 +1,13 @@
 .referral-form-container {
   max-width: 350px;
-  margin: 0px auto;
+  margin: 20px auto; /* Added slight top margin for spacing */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   align-items: center;
+  padding: 20px; /* Added padding for content spacing */
+  box-sizing: border-box;
 }
 
 .referral-form-title {
@@ -51,4 +53,26 @@
 
 .referral-submit-btn:hover {
   background-color: #005163;
+}
+
+@media (max-width: 600px) {
+  .referral-form-container {
+    max-width: 90%; /* Make it more flexible on mobile */
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .referral-form-title {
+    font-size: 20px; /* Slightly smaller for mobile */
+  }
+
+  .referral-input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .referral-submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
