@@ -1,12 +1,19 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 import { FaPhone } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
+import Skeleton from "../Skeleton";
 
 const Contact = () => {
   const form = useRef();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,6 +26,7 @@ const Contact = () => {
     );
     e.target.reset();
   };
+
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get In Touch</h2>
@@ -30,80 +38,113 @@ const Contact = () => {
       </p>
 
       <div className="contact__container">
-        <div className="contact__content">
-          <div className="contact__info">
-            <div className="contact__card">
-              <div className="contact__card-icon">
-                <MdMail />
-              </div>
-
-              <h3 className="contact__card-title">Email</h3>
-              <span className="contact__card-data">
-                management@havoc-properties-tx.com
-              </span>
-
-              <a
-                href="mailto:management@havoc-properties-tx.com"
-                className="contact__button"
-              >
-                Write me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
+        {loading ? (
+          <div className="contact__content">
+            <div className="contact__info">
+              <Skeleton type="text" height="30px" width="100%" count={1} />
+              <Skeleton type="text" height="20px" width="80%" count={1} />
             </div>
-
-            <div className="contact__card">
-              <div className="contact__card-icon">
-                <FaPhone />
-              </div>
-              <h3 className="contact__card-title">Phone</h3>
-              <span className="contact__card-data">(830) 521-6927</span>
-              <a href="tel:(830) 521-6927" className="contact__button">
-                Call me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
+            <div className="contact__info">
+              <Skeleton type="text" height="30px" width="100%" count={1} />
+              <Skeleton type="text" height="20px" width="80%" count={1} />
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="contact__content">
+            <div className="contact__info">
+              <div className="contact__card">
+                <div className="contact__card-icon">
+                  <MdMail />
+                </div>
+                <h3 className="contact__card-title">Email</h3>
+                <span className="contact__card-data">
+                  management@havoc-properties-tx.com
+                </span>
+                <a
+                  href="mailto:management@havoc-properties-tx.com"
+                  className="contact__button"
+                >
+                  Write me{" "}
+                  <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+                </a>
+              </div>
+
+              <div className="contact__card">
+                <div className="contact__card-icon">
+                  <FaPhone />
+                </div>
+                <h3 className="contact__card-title">Phone</h3>
+                <span className="contact__card-data">(830) 521-6927</span>
+                <a href="tel:(830) 521-6927" className="contact__button">
+                  Call me{" "}
+                  <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="contact__content">
-          <h3 className="contact__title">Write me</h3>
+          {/* Skeleton loader for the "Write me" title */}
+          {loading ? (
+            <Skeleton
+              type="text"
+              height="30px"
+              width="150px"
+              style={{ marginBottom: "20px" }}
+            />
+          ) : (
+            <h3 className="contact__title">Write me</h3>
+          )}
 
-          <form ref={form} onSubmit={sendEmail} className="contact__form">
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Name</label>
-              <input
-                type="text"
-                name="name"
-                className="contact__form-input"
-                placeholder="John Doe"
-              />
-            </div>
+          {/* Form or skeleton for the form */}
+          {loading ? (
+            <Skeleton
+              type="text"
+              height="40px"
+              width="100%"
+              count={3}
+              style={{ marginTop: "30px" }}
+            />
+          ) : (
+            <form ref={form} onSubmit={sendEmail} className="contact__form">
+              <div className="contact__form-div">
+                <label className="contact__form-tag">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="contact__form-input"
+                  placeholder="John Doe"
+                />
+              </div>
 
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Mail</label>
-              <input
-                type="email"
-                name="email"
-                className="contact__form-input"
-                placeholder="johndoe@example.com"
-              />
-            </div>
+              <div className="contact__form-div">
+                <label className="contact__form-tag">Mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="contact__form-input"
+                  placeholder="johndoe@example.com"
+                />
+              </div>
 
-            <div className="contact__form-div contact__form-area">
-              <label className="contact__form-tag">Message</label>
-              <textarea
-                name="message"
-                cols="30"
-                rows="10"
-                className="contact__form-input"
-                placeholder="Your message"
-              ></textarea>
-            </div>
+              <div className="contact__form-div contact__form-area">
+                <label className="contact__form-tag">Message</label>
+                <textarea
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  className="contact__form-input"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
 
-            <button className="button button--flex">
-              Send Message
-              <IoIosSend />
-            </button>
-          </form>
+              <button className="button button--flex">
+                Send Message
+                <IoIosSend />
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Skeleton from "../Skeleton";
 import {
   FaWifi,
-  FaDumbbell,
-  FaShieldAlt,
   FaDoorOpen,
   FaBath,
   FaFan,
@@ -153,6 +152,13 @@ const properties = [
 ];
 
 const Amenities = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="amenities-section">
       <h2>Amenities</h2>
@@ -166,18 +172,38 @@ const Amenities = () => {
         truly special.
       </p>
       <div className="amenities-grid">
-        {properties.map((property, index) => (
-          <div key={index} className="property-card">
-            <h3>{property.name}</h3>
-            <ul>
-              {property.amenities.map((amenity, idx) => (
-                <li key={idx} className="amenity-item">
-                  {amenity.icon} <span>{amenity.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {loading
+          ? Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className="property-card">
+                <Skeleton
+                  type="text"
+                  height="30px"
+                  width="80%"
+                  style={{ marginBottom: "10px" }}
+                />
+                {Array.from({ length: 8 }).map((_, idx) => (
+                  <Skeleton
+                    key={idx}
+                    type="text"
+                    height="20px"
+                    width="100%"
+                    style={{ marginBottom: "5px" }}
+                  />
+                ))}
+              </div>
+            ))
+          : properties.map((property, index) => (
+              <div key={index} className="property-card">
+                <h3>{property.name}</h3>
+                <ul>
+                  {property.amenities.map((amenity, idx) => (
+                    <li key={idx} className="amenity-item">
+                      {amenity.icon} <span>{amenity.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
       </div>
     </section>
   );

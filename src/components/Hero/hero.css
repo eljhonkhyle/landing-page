@@ -43,6 +43,28 @@
   line-height: 2rem;
   color: #333;
 }
+/* Skeleton Loading Animation */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  display: inline-block;
+}
 
 /* Responsive: Stack items on smaller screens */
 @media (max-width: 768px) {

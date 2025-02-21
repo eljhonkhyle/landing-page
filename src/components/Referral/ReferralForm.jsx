@@ -1,45 +1,42 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Skeleton from "../Skeleton";
 import "./styles/referralform.css";
 
 const ReferralForm = () => {
   const [referralEmail, setReferralEmail] = useState("");
   const [referrerName, setReferrerName] = useState("");
   const [referralName, setReferralName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    if (
-      referralEmail.trim() !== "" &&
-      referrerName.trim() !== "" &&
-      referrerName.trim() !== ""
-    ) {
-      const templateParams = {
-        referrer_name: referrerName,
-        referral_email: referralEmail,
-        referral_name: referralName,
-      };
+    const templateParams = {
+      referrer_name: referrerName,
+      referral_email: referralEmail,
+      referral_name: referralName,
+    };
 
-      emailjs
-        .send(
-          "service_suawm0s",
-          "template_5aivm3p",
-          templateParams,
-          "5fZg2XH9aUXBtyOP6"
-        )
-        .then(
-          (response) => {
-            alert("Referral email sent successfully!");
-            setReferrerName("");
-            setReferralName(""); // Reset both fields
-            setReferralEmail("");
-          },
-          (error) => {
-            console.error("Error sending email:", error);
-          }
-        );
-    }
+    emailjs
+      .send(
+        "service_suawm0s",
+        "template_5aivm3p",
+        templateParams,
+        "5fZg2XH9aUXBtyOP6"
+      )
+      .then(() => {
+        alert("✅ Referral email sent successfully!");
+        setReferrerName("");
+        setReferralName("");
+        setReferralEmail("");
+      })
+      .catch((error) => {
+        console.error("❌ Error sending email:", error);
+        alert("Failed to send the referral. Please try again.");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -48,37 +45,60 @@ const ReferralForm = () => {
       <p className="referral-form-description">
         Enter your name and your friend's email below to send them a referral.
       </p>
-      <form onSubmit={handleSubmit} className="referral-form">
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={referrerName}
-          onChange={(e) => setReferrerName(e.target.value)}
-          className="referral-input"
-          required
-        />
 
-        <div className="referral-info">
+      <form onSubmit={handleSubmit} className="referral-form">
+        {loading ? (
+          <Skeleton type="input" height="40px" />
+        ) : (
           <input
             type="text"
-            placeholder="Friend's Name"
-            value={referralName}
-            onChange={(e) => setReferralName(e.target.value)}
+            placeholder="Your Name"
+            value={referrerName}
+            onChange={(e) => setReferrerName(e.target.value)}
             className="referral-input"
             required
           />
-          <input
-            type="email"
-            placeholder="Friend's email"
-            value={referralEmail}
-            onChange={(e) => setReferralEmail(e.target.value)}
-            className="referral-input"
-            required
-          />
+        )}
+
+        <div className="referral-info">
+          {loading ? (
+            <>
+              <Skeleton type="input" height="40px" />
+              <Skeleton type="input" height="40px" />
+            </>
+          ) : (
+            <>
+              <input
+                type="text"
+                placeholder="Friend's Name"
+                value={referralName}
+                onChange={(e) => setReferralName(e.target.value)}
+                className="referral-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Friend's Email"
+                value={referralEmail}
+                onChange={(e) => setReferralEmail(e.target.value)}
+                className="referral-input"
+                required
+              />
+            </>
+          )}
         </div>
-        <button type="submit" className="referral-submit-btn">
-          Send Referral
-        </button>
+
+        {loading ? (
+          <Skeleton type="button" height="45px" width="100%" />
+        ) : (
+          <button
+            type="submit"
+            className="referral-submit-btn"
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Send Referral"}
+          </button>
+        )}
       </form>
     </div>
   );

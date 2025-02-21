@@ -1,10 +1,25 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ReferralContext } from "./ReferralContext";
 import ReferralForm from "./ReferralForm";
+import Skeleton from "../Skeleton";
 import "./styles/referral.css";
 
 const Referral = () => {
   const { referrals, addReferral } = useContext(ReferralContext);
+  const [loading, setLoading] = useState(false);
+
+  const handleRefer = async (referralData) => {
+    setLoading(true);
+    try {
+      await addReferral(referralData);
+      alert("✅ Referral added successfully!");
+    } catch (error) {
+      console.error("❌ Failed to add referral:", error);
+      alert("Failed to add referral. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="referral-section">
@@ -17,7 +32,11 @@ const Referral = () => {
         </p>
       </div>
 
-      <ReferralForm onRefer={addReferral} />
+      {loading ? (
+        <Skeleton type="card" height="300px" width="100%" />
+      ) : (
+        <ReferralForm onRefer={handleRefer} />
+      )}
     </div>
   );
 };

@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../assets/Logo1.png";
-import Schedule from "../Schedule/Schedule";
+import Skeleton from "../Skeleton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+  // Simulate loading delay
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleLogoClick = () => {
     if (location.pathname === "/home") {
@@ -19,15 +26,22 @@ const Header = () => {
 
   return (
     <nav className="header">
-      {/* Logo (Clickable - Navigates to Homepage) */}
-      <img
-        src={Logo}
-        className="logo1 cursor-pointer"
-        alt="Company Logo"
-        onClick={handleLogoClick}
-      />
+      {isLoading ? (
+        <Skeleton
+          width="120px"
+          height="70px"
+          borderRadius="8px"
+          style={{ marginLeft: "50px", marginTop: "30px" }}
+        />
+      ) : (
+        <img
+          src={Logo}
+          className="logo1 cursor-pointer"
+          alt="Company Logo"
+          onClick={handleLogoClick}
+        />
+      )}
 
-      {/* Hamburger Menu */}
       <div
         className="hamburger"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -35,48 +49,33 @@ const Header = () => {
         aria-expanded={isMenuOpen}
         role="button"
       >
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
+        {isLoading ? (
+          <Skeleton width="30px" height="30px" borderRadius="50%" />
+        ) : isMenuOpen ? (
+          <FaTimes />
+        ) : (
+          <FaBars />
+        )}
       </div>
 
-      {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-        <li>
-          <NavLink
-            to="/home"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/amenities"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Amenities
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/schedule"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Schedule
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact Us
-          </NavLink>
-        </li>
+        {isLoading
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <li key={index}>
+                <Skeleton width="80px" height="30px" />
+              </li>
+            ))
+          : ["Home", "Amenities", "Schedule", "Contact"].map((link, index) => (
+              <li key={index}>
+                <NavLink
+                  to={`/${link.toLowerCase().replace(/\s/g, "")}`}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link}
+                </NavLink>
+              </li>
+            ))}
       </ul>
     </nav>
   );

@@ -1,0 +1,43 @@
+/* Skeleton Base */
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Skeleton Types */
+.skeleton-text {
+  height: 20px;
+  width: 100%;
+}
+
+.skeleton-image {
+  height: 300px;
+  width: 100%;
+}
+
+.skeleton-card {
+  height: 400px;
+  width: 100%;
+}
+
+.skeleton-button {
+  height: 40px;
+  width: 150px;
+}

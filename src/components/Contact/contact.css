@@ -150,7 +150,6 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
-  max-width: 300px; /* Limits button width */
 }
 
 .button--flex {
