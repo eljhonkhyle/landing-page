@@ -1,9 +1,9 @@
 .contact {
   padding: 50px 0;
   background-color: #f9f9f9;
-  margin-top: 100px;
   margin-bottom: -3rem;
   padding-bottom: 100px;
+  margin: 100px auto;
   width: 100%;
 }
 
@@ -150,6 +150,7 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
+  max-width: 300px; /* Limits button width */
 }
 
 .button--flex {
@@ -167,6 +168,7 @@
 @media (max-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .contact__title {
