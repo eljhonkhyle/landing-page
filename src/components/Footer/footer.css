@@ -35,7 +35,7 @@ footer {
 
 .footer-logo {
   padding: 2rem;
-  max-width: 120px; /* Adjust the width to fit well */
+  max-width: 150px; /* Adjust the width to fit well */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Ensures proper scaling */
 }
