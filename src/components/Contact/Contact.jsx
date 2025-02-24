@@ -119,7 +119,7 @@ const Contact = () => {
               style={{ marginBottom: "20px" }}
             />
           ) : (
-            <h3 className="contact__title">Write me</h3>
+            <></>
           )}
 
           {loading ? (
