@@ -68,6 +68,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-button-next::after,
@@ -88,7 +92,7 @@
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .carousel-container {
-    height: 400px;
+    height: auto;
   }
   .carousel-text {
     bottom: 20px;
@@ -109,7 +113,7 @@
 
 @media (max-width: 768px) {
   .carousel-container {
-    height: 300px;
+    height: auto;
   }
   .carousel-text {
     bottom: 15px;
@@ -132,7 +136,7 @@
 
 @media (max-width: 480px) {
   .carousel-container {
-    height: 250px;
+    height: auto;
   }
   .carousel-text {
     bottom: 10px;
