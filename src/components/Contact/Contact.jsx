@@ -9,6 +9,9 @@ import Skeleton from "../Skeleton";
 const Contact = () => {
   const form = useRef();
   const [loading, setLoading] = useState(true);
+  const [isSending, setIsSending] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -17,14 +20,39 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSending(true);
+    setSuccess(false);
+    setError("");
 
-    emailjs.sendForm(
-      "service_suawm0s",
-      "template_zldang8",
-      form.current,
-      "5fZg2XH9aUXBtyOP6"
-    );
-    e.target.reset();
+    const formData = new FormData(form.current);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    if (!name || !email || !message) {
+      setError("Please fill in all fields.");
+      setIsSending(false);
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        "service_suawm0s",
+        "template_zldang8",
+        form.current,
+        "5fZg2XH9aUXBtyOP6"
+      )
+      .then(() => {
+        setSuccess(true);
+        form.current.reset();
+      })
+      .catch(() => {
+        setError("Failed to send message. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false);
+        setTimeout(() => setSuccess(false), 5000);
+      });
   };
 
   return (
@@ -40,14 +68,12 @@ const Contact = () => {
       <div className="contact__container">
         {loading ? (
           <div className="contact__content">
-            <div className="contact__info">
-              <Skeleton type="text" height="30px" width="100%" count={1} />
-              <Skeleton type="text" height="20px" width="80%" count={1} />
-            </div>
-            <div className="contact__info">
-              <Skeleton type="text" height="30px" width="100%" count={1} />
-              <Skeleton type="text" height="20px" width="80%" count={1} />
-            </div>
+            {[...Array(2)].map((_, index) => (
+              <div className="contact__info" key={index}>
+                <Skeleton type="text" height="30px" width="100%" />
+                <Skeleton type="text" height="20px" width="80%" />
+              </div>
+            ))}
           </div>
         ) : (
           <div className="contact__content">
@@ -85,7 +111,6 @@ const Contact = () => {
         )}
 
         <div className="contact__content">
-          {/* Skeleton loader for the "Write me" title */}
           {loading ? (
             <Skeleton
               type="text"
@@ -97,7 +122,6 @@ const Contact = () => {
             <h3 className="contact__title">Write me</h3>
           )}
 
-          {/* Form or skeleton for the form */}
           {loading ? (
             <Skeleton
               type="text"
@@ -108,39 +132,60 @@ const Contact = () => {
             />
           ) : (
             <form ref={form} onSubmit={sendEmail} className="contact__form">
+              {error && <p className="error-message">{error}</p>}
+              {success && (
+                <p className="success-message">Message sent successfully!</p>
+              )}
+
               <div className="contact__form-div">
-                <label className="contact__form-tag">Name</label>
+                <label className="contact__form-tag" htmlFor="name">
+                  Name
+                </label>
                 <input
                   type="text"
                   name="name"
+                  id="name"
                   className="contact__form-input"
                   placeholder="John Doe"
+                  aria-label="Your name"
                 />
               </div>
 
               <div className="contact__form-div">
-                <label className="contact__form-tag">Mail</label>
+                <label className="contact__form-tag" htmlFor="email">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
+                  id="email"
                   className="contact__form-input"
                   placeholder="johndoe@example.com"
+                  aria-label="Your email"
                 />
               </div>
 
               <div className="contact__form-div contact__form-area">
-                <label className="contact__form-tag">Message</label>
+                <label className="contact__form-tag" htmlFor="message">
+                  Message
+                </label>
                 <textarea
                   name="message"
+                  id="message"
                   cols="30"
                   rows="10"
                   className="contact__form-input"
                   placeholder="Your message"
+                  aria-label="Your message"
                 ></textarea>
               </div>
 
-              <button className="button button--flex">
-                Send Message
+              <button
+                className="button button--flex"
+                disabled={isSending}
+                aria-label="Send message"
+              >
+                {isSending ? "Sending..." : "Send Message"}
                 <IoIosSend />
               </button>
             </form>

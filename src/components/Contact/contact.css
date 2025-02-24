@@ -1,10 +1,14 @@
 /* General Contact Section Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .contact {
-  padding: 50px 0;
+  padding: 50px 0 100px;
   background-color: #f9f9f9;
   margin-top: 100px;
-  margin-bottom: -3rem;
-  padding-bottom: 100px;
   width: 100%;
 }
 
@@ -32,6 +36,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 2rem;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 /* Contact Content */
@@ -51,8 +56,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 800px;
-  margin: 50px auto;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact__card-icon {
@@ -96,7 +102,9 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact__form-div {
@@ -116,7 +124,7 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
-  max-width: 100%;
+  width: 100%;
 }
 
 .contact__form-input:focus {
@@ -167,27 +175,27 @@
 
 @media (max-width: 480px) {
   .contact__container {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   .contact__card,
   .contact__form {
     padding: 10px;
-    max-width: 100%;
+    width: 100%;
   }
 
   .contact__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .contact__form-input {
     font-size: 0.9rem;
-    padding: 10px;
+    padding: 8px;
   }
 
   .button {
     width: 100%;
-    padding: 10px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
+    font-size: 0.85rem;
   }
 }

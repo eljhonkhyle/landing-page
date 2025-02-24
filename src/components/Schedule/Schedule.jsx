@@ -37,7 +37,7 @@ const Schedule = () => {
 
           <iframe
             src="https://calendar.app.google/GoJTJW7rJupQJR468"
-            style={{ border: "0", width: "100%", height: "900px" }}
+            style={{ border: "0", width: "100%", height: "1300px" }}
             frameBorder="0"
             scrolling="no"
             title="Google Calendar Booking"
