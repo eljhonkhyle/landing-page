@@ -3,7 +3,7 @@ import "./properties.css";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import Skeleton from "../Skeleton"; // Create a reusable Skeleton component
 
-import Mustang1 from "../../assets/mustang.webp";
+import Mustang1 from "../../assets/10951 Mustang Spring/1000000852.jpg";
 import Mustang2 from "../../assets/mustang2.webp";
 import GreenTop1 from "../../assets/greentop.webp";
 import GreenTop2 from "../../assets/greentop2.webp";

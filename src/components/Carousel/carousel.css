@@ -1,145 +1,154 @@
 /* --- Carousel Container --- */
 .carousel-container {
-    width: 100%;
-    max-width: 95%;
-    height: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: auto;
-    position: relative;
+  width: 100%;
+  max-width: 95%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: auto;
+  position: relative;
 }
 
 /* --- Slide Styling --- */
 .carousel-slide {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* --- Image Styling --- */
 .carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* --- Text Overlay (Centered on Smaller Screens) --- */
 /* --- Text Overlay (Aligned to Left) --- */
 .carousel-text {
-    position: absolute;
-    bottom: 30px;
-    left: 30px; /* Move text container to the left */
-    transform: none; /* Remove centering */
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 20px 18px;
-    border-radius: 8px;
-    max-width: 50%;
-    text-align: left; /* Ensure text alignment is left */
-    transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: 30px;
+  left: 30px; /* Move text container to the left */
+  transform: none; /* Remove centering */
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px 18px;
+  border-radius: 8px;
+  max-width: 50%;
+  text-align: left; /* Ensure text alignment is left */
+  transition: all 0.3s ease-in-out;
 }
 
-
 .carousel-text h2 {
-    font-size: 30px;
-    margin: 0;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 30px;
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .carousel-text p {
-    font-size: 14px;
-    margin: 5px 0 0;
-    line-height: 1.5rem;
-    color: #f4f4f4;
+  font-size: 14px;
+  margin: 5px 0 0;
+  line-height: 1.5rem;
+  color: #f4f4f4;
 }
 
 /* --- Custom Arrow Styles --- */
 .swiper-button-next,
 .swiper-button-prev {
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 14px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 14px !important;
+  font-size: 14px !important;
+}
+
+/* Ensure Swiper elements are not affected */
+.swiper,
+.swiper-wrapper,
+.swiper-slide,
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  box-sizing: content-box !important;
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
-    .carousel-container {
-        height: 400px;
-    }
-    .carousel-text {
-        bottom: 20px;
-        max-width: 60%;
-    }
-    .carousel-text h2 {
-        font-size: 24px;
-    }
-    .carousel-text p {
-        font-size: 12px;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 30px;
-        height: 30px;
-    }
+  .carousel-container {
+    height: 400px;
+  }
+  .carousel-text {
+    bottom: 20px;
+    max-width: 60%;
+  }
+  .carousel-text h2 {
+    font-size: 24px;
+  }
+  .carousel-text p {
+    font-size: 12px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 768px) {
-    .carousel-container {
-        height: 300px;
-    }
-    .carousel-text {
-        bottom: 15px;
-        left: 20px; /* Keep it aligned to the left */
-        max-width: 70%;
-    }
-    .carousel-text h2 {
-        font-size: 20px;
-    }
-    .carousel-text p {
-        font-size: 12px;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 25px;
-        height: 25px;
-        font-size: 12px !important;
-    }
+  .carousel-container {
+    height: 300px;
+  }
+  .carousel-text {
+    bottom: 15px;
+    left: 20px; /* Keep it aligned to the left */
+    max-width: 70%;
+  }
+  .carousel-text h2 {
+    font-size: 20px;
+  }
+  .carousel-text p {
+    font-size: 12px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 25px;
+    height: 25px;
+    font-size: 12px !important;
+  }
 }
 
 @media (max-width: 480px) {
-    .carousel-container {
-        height: 250px;
-    }
-    .carousel-text {
-        bottom: 10px;
-        left: 15px; /* Adjust for smaller screens */
-        max-width: 85%;
-    }
-    .carousel-text h2 {
-        font-size: 16px;
-    }
-    .carousel-text p {
-        font-size: 10px;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 20px;
-        height: 20px;
-        font-size: 10px !important;
-    }
+  .carousel-container {
+    height: 250px;
+  }
+  .carousel-text {
+    bottom: 10px;
+    left: 15px; /* Adjust for smaller screens */
+    max-width: 85%;
+  }
+  .carousel-text h2 {
+    font-size: 16px;
+  }
+  .carousel-text p {
+    font-size: 10px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    font-size: 10px !important;
+  }
 }

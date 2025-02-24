@@ -1,7 +1,7 @@
-/* General Contact Section Styling */
-*,
-*::before,
-*::after {
+/* Restrict box-sizing only to contact section */
+.contact *,
+.contact *::before,
+.contact *::after {
   box-sizing: border-box;
 }
 

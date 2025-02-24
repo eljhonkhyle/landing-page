@@ -6,31 +6,31 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./carousel.css";
 import { FaBath, FaBed } from "react-icons/fa";
-import Image1 from "../../assets/image1.webp";
-import Image2 from "../../assets/image2.webp";
-import Image3 from "../../assets/image3.webp";
 import Skeleton from "../Skeleton";
+import Mustang1 from "../../assets/10951 Mustang Spring/1000000852.jpg";
+import GreenTop1 from "../../assets/6308 Green Top Dr/greentop1.jpg";
+import Agave1 from "../../assets/7613 Agave Bnd/agave1.png";
 
 const properties = [
   {
     id: 1,
     name: "10951 Mustang Spring",
     location: "Texas, USA",
-    image: Image1,
+    image: Mustang1,
     amenities: { beds: 3, baths: 2 },
   },
   {
     id: 2,
     name: "6308 Green Top Dr",
     location: "Texas, USA",
-    image: Image2,
+    image: GreenTop1,
     amenities: { beds: 4, baths: 3 },
   },
   {
     id: 3,
     name: "7613 Agave Bnd",
     location: "Texas, USA",
-    image: Image3,
+    image: Agave1,
     amenities: { beds: 5, baths: 4 },
   },
 ];
@@ -38,7 +38,6 @@ const properties = [
 const RealEstateCarousel = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate loading
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
