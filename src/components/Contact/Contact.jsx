@@ -69,9 +69,19 @@ const Contact = () => {
         {loading ? (
           <div className="contact__content">
             {[...Array(2)].map((_, index) => (
-              <div className="contact__info" key={index}>
-                <Skeleton type="text" height="30px" width="100%" />
-                <Skeleton type="text" height="20px" width="80%" />
+              <div className="contact__card" key={index}>
+                <Skeleton height="60px" width="60px" borderRadius="50%" />
+                <Skeleton
+                  height="20px"
+                  width="50%"
+                  style={{ margin: "10px 0" }}
+                />
+                <Skeleton height="15px" width="80%" />
+                <Skeleton
+                  height="30px"
+                  width="100px"
+                  style={{ marginTop: "10px" }}
+                />
               </div>
             ))}
           </div>
@@ -112,24 +122,24 @@ const Contact = () => {
 
         <div className="contact__content">
           {loading ? (
-            <Skeleton
-              type="text"
-              height="30px"
-              width="150px"
-              style={{ marginBottom: "20px" }}
-            />
-          ) : (
-            <></>
-          )}
-
-          {loading ? (
-            <Skeleton
-              type="text"
-              height="40px"
-              width="100%"
-              count={3}
-              style={{ marginTop: "30px" }}
-            />
+            <div className="contact__form">
+              <Skeleton
+                height="40px"
+                width="100%"
+                style={{ marginBottom: "10px" }}
+              />
+              <Skeleton
+                height="40px"
+                width="100%"
+                style={{ marginBottom: "10px" }}
+              />
+              <Skeleton
+                height="100px"
+                width="100%"
+                style={{ marginBottom: "10px" }}
+              />
+              <Skeleton height="40px" width="150px" />
+            </div>
           ) : (
             <form ref={form} onSubmit={sendEmail} className="contact__form">
               {error && <p className="error-message">{error}</p>}

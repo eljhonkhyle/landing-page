@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Ensure proper module import
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -46,7 +46,7 @@ const RealEstateCarousel = () => {
   return (
     <div className="carousel-container">
       {isLoading ? (
-        <Swiper slidesPerView={1} loop>
+        <Swiper slidesPerView={1} loop={true}>
           {properties.map((property) => (
             <SwiperSlide key={property.id} className="carousel-slide">
               <Skeleton width="100%" height="700px" borderRadius="8px" />
@@ -64,10 +64,10 @@ const RealEstateCarousel = () => {
         </Swiper>
       ) : (
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
+          modules={[Navigation, Pagination, Autoplay]} // Ensure modules are passed correctly
+          navigation={true} // Enable navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto slide every 3 seconds
           loop={true}
           slidesPerView={1}
         >
