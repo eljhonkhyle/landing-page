@@ -24,7 +24,7 @@
 
 .section__subtitle {
   text-align: left;
-  line-height: 1.8rem;
+  line-height: 2rem;
   margin: 10px auto;
   color: #333;
   max-width: 85%;
@@ -170,7 +170,6 @@
 
   .section__subtitle {
     font-size: 1rem;
-    line-height: 1.6rem;
   }
 }
 
