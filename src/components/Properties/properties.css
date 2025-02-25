@@ -220,6 +220,22 @@
   cursor: pointer;
 }
 
+.map-container {
+  margin: 10px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.map-container iframe:hover {
+  transform: scale(1.02);
+}
+
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;

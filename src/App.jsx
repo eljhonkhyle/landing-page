@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Navbar/Header";
 import Hero from "./components/Hero/Hero";
 import Carousel from "./components/Carousel/Carousel";
+
 import Properties from "./components/Properties/Properties";
 import Feedback from "./components/Feedback/FeedBack";
 import Referral from "./components/Referral/Referral";

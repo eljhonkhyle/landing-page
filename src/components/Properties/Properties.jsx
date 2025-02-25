@@ -40,6 +40,8 @@ const Properties = () => {
   const properties = [
     {
       name: "10951 Mustang Spring",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.558314679041!2d-98.71353068489851!3d29.5041239820837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5cbe5bbf5e45%3A0x77c3b1d4f3ef4c1a!2s10951%20Mustang%20Spring%2C%20San%20Antonio%2C%20TX%2078254!5e0!3m2!1sen!2sus!4v1708987654321!5m2!1sen!2sus",
       images: [
         Mustang1,
         Mustang2,
@@ -55,6 +57,9 @@ const Properties = () => {
     },
     {
       name: "6308 Green Top Dr",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3475.3675190564697!2d-98.38821438490082!3d29.58540218204653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c8e234d8710f3%3A0x9bb56ec3c1f4b6b!2s6308%20Green%20Top%20Dr%2C%20San%20Antonio%2C%20TX%2078233!5e0!3m2!1sen!2sus!4v1708987654321!5m2!1sen!2sus",
+
       images: [
         GreenTop1,
         GreenTop2,
@@ -70,6 +75,9 @@ const Properties = () => {
     },
     {
       name: "7613 Agave Bnd",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.0212690207615!2d-98.37590938490168!3d29.61772698199872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c8ef4b6b4b8e5%3A0x26d1e7d59d6e4e6f!2s7613%20Agave%20Bnd%2C%20San%20Antonio%2C%20TX%2078218!5e0!3m2!1sen!2sus!4v1708987654321!5m2!1sen!2sus",
+
       images: [
         Agave1,
         Agave2,
@@ -157,6 +165,8 @@ const Properties = () => {
               <div className="card" key={propertyIndex}>
                 <h2 className="property-name">{property.name}</h2>
                 <p className="property-description">{property.description}</p>
+                <p className="property-location">{property.location}</p>
+
                 <div className="image-container">
                   <FaChevronLeft
                     className="arrow left"
@@ -176,6 +186,21 @@ const Properties = () => {
                     className="arrow right"
                     onClick={() => changeImage(propertyIndex, 1)}
                   />
+                </div>
+                <div className="map-container">
+                  <iframe
+                    src={property.mapUrl}
+                    width="100%"
+                    height="270"
+                    style={{
+                      border: "0",
+                      borderRadius: "12px",
+                    }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map of ${property.name}`}
+                  ></iframe>
                 </div>
               </div>
             ))}

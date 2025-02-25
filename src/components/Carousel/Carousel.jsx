@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Ensure proper module import
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -35,7 +35,7 @@ const properties = [
   },
 ];
 
-const RealEstateCarousel = () => {
+const Carousel = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -95,4 +95,4 @@ const RealEstateCarousel = () => {
   );
 };
 
-export default RealEstateCarousel;
+export default Carousel;
