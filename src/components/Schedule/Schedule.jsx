@@ -18,7 +18,7 @@ const Schedule = () => {
           <Skeleton
             width="300px"
             height="40px"
-            style={{ margin: "0 auto 16px" }}
+            style={{ margin: "25px auto 16px" }}
           />
           <Skeleton
             width="80%"
