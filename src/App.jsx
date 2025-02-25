@@ -2,11 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Navbar/Header";
 import Hero from "./components/Hero/Hero";
 import Carousel from "./components/Carousel/Carousel";
-
 import Properties from "./components/Properties/Properties";
 import Feedback from "./components/Feedback/FeedBack";
 import Referral from "./components/Referral/Referral";
@@ -50,6 +50,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
