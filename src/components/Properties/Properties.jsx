@@ -158,7 +158,13 @@ const Properties = () => {
                   height="16px"
                   style={{ marginBottom: "10px" }}
                 />
-                <Skeleton width="100%" height="200px" borderRadius="8px" />
+                <Skeleton
+                  width="100%"
+                  height="200px"
+                  borderRadius="8px"
+                  style={{ marginBottom: "10px" }}
+                />
+                <Skeleton width="100%" height="270px" borderRadius="12px" />
               </div>
             ))
           : properties.map((property, propertyIndex) => (
@@ -187,20 +193,25 @@ const Properties = () => {
                     onClick={() => changeImage(propertyIndex, 1)}
                   />
                 </div>
+
                 <div className="map-container">
-                  <iframe
-                    src={property.mapUrl}
-                    width="100%"
-                    height="270"
-                    style={{
-                      border: "0",
-                      borderRadius: "12px",
-                    }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`Map of ${property.name}`}
-                  ></iframe>
+                  {loading ? (
+                    <Skeleton width="100%" height="270px" borderRadius="12px" />
+                  ) : (
+                    <iframe
+                      src={property.mapUrl}
+                      width="100%"
+                      height="270"
+                      style={{
+                        border: "0",
+                        borderRadius: "12px",
+                      }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Map of ${property.name}`}
+                    ></iframe>
+                  )}
                 </div>
               </div>
             ))}
