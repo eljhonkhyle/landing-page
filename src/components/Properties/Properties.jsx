@@ -2,13 +2,33 @@ import React, { useState, useEffect } from "react";
 import "./properties.css";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import Skeleton from "../Skeleton";
-import Mustang1 from "../../assets/10951 Mustang Spring/1000000852.jpg";
-import Mustang2 from "../../assets/mustang2.webp";
-import GreenTop1 from "../../assets/greentop.webp";
-import GreenTop2 from "../../assets/greentop2.webp";
-import Agave1 from "../../assets/agave.webp";
-import Agave2 from "../../assets/agave2.webp";
-
+import Mustang1 from "../../assets/10951 Mustang Spring/mustang1.jpg";
+import Mustang2 from "../../assets/10951 Mustang Spring/mustang2.jpg";
+import Mustang3 from "../../assets/10951 Mustang Spring/mustang3.jpg";
+import Mustang4 from "../../assets/10951 Mustang Spring/mustang4.jpg";
+import Mustang5 from "../../assets/10951 Mustang Spring/mustang5.jpg";
+import Mustang6 from "../../assets/10951 Mustang Spring/mustang6.jpg";
+import Mustang7 from "../../assets/10951 Mustang Spring/mustang7.jpg";
+import Mustang8 from "../../assets/10951 Mustang Spring/mustang8.jpg";
+import Mustang9 from "../../assets/10951 Mustang Spring/mustang9.jpg";
+import GreenTop1 from "../../assets/6308 Green Top Dr/greentop1.jpg";
+import GreenTop2 from "../../assets/6308 Green Top Dr/greentop2.jpg";
+import GreenTop3 from "../../assets/6308 Green Top Dr/greentop3.jpg";
+import GreenTop4 from "../../assets/6308 Green Top Dr/greentop4.jpg";
+import GreenTop5 from "../../assets/6308 Green Top Dr/greentop5.jpg";
+import GreenTop6 from "../../assets/6308 Green Top Dr/greentop6.jpg";
+import GreenTop7 from "../../assets/6308 Green Top Dr/greentop7.jpg";
+import GreenTop8 from "../../assets/6308 Green Top Dr/greentop8.jpg";
+import GreenTop9 from "../../assets/6308 Green Top Dr/greentop9.jpg";
+import Agave1 from "../../assets/7613 Agave Bnd/agave0.png";
+import Agave2 from "../../assets/7613 Agave Bnd/agave1.png";
+import Agave3 from "../../assets/7613 Agave Bnd/agave2.png";
+import Agave4 from "../../assets/7613 Agave Bnd/agave3.png";
+import Agave5 from "../../assets/7613 Agave Bnd/agave4.png";
+import Agave6 from "../../assets/7613 Agave Bnd/agave5.png";
+import Agave7 from "../../assets/7613 Agave Bnd/agave6.png";
+import Agave8 from "../../assets/7613 Agave Bnd/agave7.png";
+import Agave9 from "../../assets/7613 Agave Bnd/agave8.png";
 const Properties = () => {
   const [loading, setLoading] = useState(true);
   const [lightbox, setLightbox] = useState({
@@ -20,17 +40,47 @@ const Properties = () => {
   const properties = [
     {
       name: "10951 Mustang Spring",
-      images: [Mustang1, Mustang2],
+      images: [
+        Mustang1,
+        Mustang2,
+        Mustang3,
+        Mustang4,
+        Mustang5,
+        Mustang6,
+        Mustang7,
+        Mustang8,
+        Mustang9,
+      ],
       description: "A vibrant community with excellent amenities nearby.",
     },
     {
       name: "6308 Green Top Dr",
-      images: [GreenTop1, GreenTop2],
+      images: [
+        GreenTop1,
+        GreenTop2,
+        GreenTop3,
+        GreenTop4,
+        GreenTop5,
+        GreenTop6,
+        GreenTop7,
+        GreenTop8,
+        GreenTop9,
+      ],
       description: "Comfortable and spacious rooms in a peaceful area.",
     },
     {
       name: "7613 Agave Bnd",
-      images: [Agave1, Agave2],
+      images: [
+        Agave1,
+        Agave2,
+        Agave3,
+        Agave4,
+        Agave5,
+        Agave6,
+        Agave7,
+        Agave8,
+        Agave9,
+      ],
       description:
         "Ideal for those looking for a quiet and convenient living space.",
     },
