@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Navbar/Header";
 import Hero from "./components/Hero/Hero";
@@ -51,6 +52,7 @@ function App() {
 
       <Footer />
       <SpeedInsights />
+      <Analytics />
     </BrowserRouter>
   );
 }
