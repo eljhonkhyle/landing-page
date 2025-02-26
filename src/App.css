@@ -17,3 +17,16 @@
   z-index: 9999;
   background: transparent !important; /* Ensure it's not white */
 }
+
+.sonner-toast {
+  word-wrap: break-word !important;
+  white-space: normal !important;
+}
+
+@media (max-width: 768px) {
+  .sonner-toaster {
+    width: 90% !important; /* Make it fit smaller screens */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Center it */
+  }
+}
