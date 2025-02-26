@@ -51,7 +51,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <div id="toaster-container">
-        <Toaster position="top-center" richColors expand={true} />
+        <Toaster position="top-right" richColors expand={true} />
       </div>
 
       <Footer />
