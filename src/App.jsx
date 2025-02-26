@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "sonner";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Navbar/Header";
 import Hero from "./components/Hero/Hero";
@@ -49,6 +50,9 @@ function App() {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <div id="toaster-container">
+        <Toaster position="top-right" richColors />
+      </div>
 
       <Footer />
       <SpeedInsights />

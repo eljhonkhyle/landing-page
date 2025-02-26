@@ -5,6 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
 import Skeleton from "../Skeleton";
+import { toast } from "sonner";
 
 const Contact = () => {
   const form = useRef();
@@ -30,7 +31,7 @@ const Contact = () => {
     const message = formData.get("message");
 
     if (!name || !email || !message) {
-      setError("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       setIsSending(false);
       return;
     }
@@ -43,11 +44,11 @@ const Contact = () => {
         "5fZg2XH9aUXBtyOP6"
       )
       .then(() => {
-        setSuccess(true);
+        toast.success("Message sent successfully!");
         form.current.reset();
       })
       .catch(() => {
-        setError("Failed to send message. Please try again.");
+        toast.error("Failed to send message. Please try again.");
       })
       .finally(() => {
         setIsSending(false);
@@ -195,7 +196,7 @@ const Contact = () => {
                 disabled={isSending}
                 aria-label="Send message"
               >
-                {isSending ? "Sending..." : "Send Message"}
+                {"Send Message"}
                 <IoIosSend />
               </button>
             </form>

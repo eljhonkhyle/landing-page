@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Skeleton from "../Skeleton";
+import { toast } from "sonner"; // ✅ Import only `toast`, not `Toaster`
 import "./styles/referralform.css";
 
 const ReferralForm = () => {
@@ -27,14 +28,14 @@ const ReferralForm = () => {
         "5fZg2XH9aUXBtyOP6"
       )
       .then(() => {
-        alert("✅ Referral email sent successfully!");
+        toast.success("Referral email sent successfully!"); // ✅ Success toast
         setReferrerName("");
         setReferralName("");
         setReferralEmail("");
       })
       .catch((error) => {
-        console.error("❌ Error sending email:", error);
-        alert("Failed to send the referral. Please try again.");
+        console.error("Error sending email:", error);
+        toast.error("Failed to send referral. Please try again."); // ✅ Error toast
       })
       .finally(() => setLoading(false));
   };
@@ -45,7 +46,6 @@ const ReferralForm = () => {
       <p className="referral-form-description">
         Enter your name and your friend's email below to send them a referral.
       </p>
-
       <form onSubmit={handleSubmit} className="referral-form">
         {loading ? (
           <Skeleton type="input" height="40px" />
