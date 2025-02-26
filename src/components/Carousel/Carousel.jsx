@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import "./carousel.css";
 import { FaBath, FaBed } from "react-icons/fa";
 import Skeleton from "../Skeleton";
@@ -45,52 +46,53 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container">
-      {isLoading ? (
-        <Swiper slidesPerView={1} loop={true}>
-          {properties.map((property) => (
-            <SwiperSlide key={property.id} className="carousel-slide">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        navigation={true}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        slidesPerView={1}
+      >
+        {properties.map((property) => (
+          <SwiperSlide key={property.id} className="carousel-slide">
+            {isLoading ? (
               <Skeleton width="100%" height="700px" borderRadius="8px" />
-              <div className="carousel-text">
-                <Skeleton width="60%" height="20px" />
-                <Skeleton
-                  width="40%"
-                  height="16px"
-                  style={{ margin: "8px 0" }}
-                />
-                <Skeleton width="80px" height="16px" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]} // Ensure modules are passed correctly
-          navigation={true} // Enable navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto slide every 3 seconds
-          loop={true}
-          slidesPerView={1}
-        >
-          {properties.map((property) => (
-            <SwiperSlide key={property.id} className="carousel-slide">
+            ) : (
               <img
                 src={property.image}
                 alt={property.name}
                 className="carousel-image"
+                onError={(e) => (e.target.src = "/fallback-image.jpg")}
               />
-              <div className="carousel-text">
-                <h2>{property.name}</h2>
-                <p>{property.location}</p>
-                <p>
-                  <FaBed className="inline mr-1" /> {property.amenities.beds}{" "}
-                  Beds | <FaBath className="inline ml-2 mr-1" />{" "}
-                  {property.amenities.baths} Baths
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+            )}
+            <div className="carousel-text">
+              {isLoading ? (
+                <>
+                  <Skeleton width="60%" height="20px" />
+                  <Skeleton
+                    width="40%"
+                    height="16px"
+                    style={{ margin: "8px 0" }}
+                  />
+                  <Skeleton width="80px" height="16px" />
+                </>
+              ) : (
+                <>
+                  <h2>{property.name}</h2>
+                  <p>{property.location}</p>
+                  <p>
+                    <FaBed className="inline mr-1" /> {property.amenities.beds}{" "}
+                    Beds |
+                    <FaBath className="inline ml-2 mr-1" />{" "}
+                    {property.amenities.baths} Baths
+                  </p>
+                </>
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
