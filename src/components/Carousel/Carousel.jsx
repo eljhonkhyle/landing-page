@@ -9,7 +9,7 @@ import "./carousel.css";
 import { FaBath, FaBed } from "react-icons/fa";
 import Skeleton from "../Skeleton";
 import Mustang1 from "../../assets/10951 Mustang Spring/mustang1.jpg";
-import GreenTop1 from "../../assets/6308 Green Top Dr/greentop3.jpg";
+import GreenTop1 from "../../assets/6308 Green Top Dr/greentop1.jpg";
 import Agave1 from "../../assets/7613 Agave Bnd/agave1.png";
 
 const properties = [
