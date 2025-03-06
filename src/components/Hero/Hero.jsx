@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./hero.css";
 import House from "../../assets/house1.svg";
-import Skeleton from "../../components/Skeleton"; // Reusing the Skeleton component
+import Skeleton from "../../components/Skeleton";
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
 
   // Simulate loading effect
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds delay for testing
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -4,11 +4,10 @@
   align-items: center;
   margin: 2rem auto;
   max-width: 90%;
-  gap: 4rem; /* Space between text and image */
+  gap: 4rem;
   margin-top: 200px;
 }
 
-/* Ensures text and image take equal space on larger screens */
 .hero-text {
   flex: 1;
   max-width: 50%;
@@ -43,7 +42,7 @@
   line-height: 2rem;
   color: #333;
 }
-/* Skeleton Loading Animation */
+
 @keyframes pulse {
   0% {
     opacity: 0.6;
@@ -66,25 +65,24 @@
   display: inline-block;
 }
 
-/* Responsive: Stack items on smaller screens */
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 1.5rem; /* Reduce space for better balance */
+    gap: 1.5rem;
   }
 
   .hero-text {
-    max-width: 90%; /* Adjust text width for better readability */
-    text-align: left; /* Center align for better look */
+    max-width: 90%;
+    text-align: left;
   }
 
   .hero-image {
     justify-content: center;
-    margin-top: 1rem; /* Space between text and image */
+    margin-top: 1rem;
   }
 
   .hero-image img {
-    max-width: 70%; /* Adjust image size */
+    max-width: 70%;
   }
 }

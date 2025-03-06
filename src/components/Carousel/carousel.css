@@ -1,4 +1,3 @@
-/* --- Carousel Container --- */
 .carousel-container {
   width: 100%;
   max-width: 95%;
@@ -10,7 +9,6 @@
   position: relative;
 }
 
-/* --- Slide Styling --- */
 .carousel-slide {
   position: relative;
   display: flex;
@@ -19,26 +17,23 @@
   height: 100%;
 }
 
-/* --- Image Styling --- */
 .carousel-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* --- Text Overlay (Centered on Smaller Screens) --- */
-/* --- Text Overlay (Aligned to Left) --- */
 .carousel-text {
   position: absolute;
   bottom: 30px;
-  left: 30px; /* Move text container to the left */
-  transform: none; /* Remove centering */
+  left: 30px;
+  transform: none;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 20px 18px;
   border-radius: 8px;
   max-width: 50%;
-  text-align: left; /* Ensure text alignment is left */
+  text-align: left;
   transition: all 0.3s ease-in-out;
 }
 
@@ -56,7 +51,6 @@
   color: #f4f4f4;
 }
 
-/* --- Custom Arrow Styles --- */
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
@@ -79,7 +73,6 @@
   font-size: 14px !important;
 }
 
-/* Ensure Swiper elements are not affected */
 .swiper,
 .swiper-wrapper,
 .swiper-slide,
@@ -89,7 +82,6 @@
   box-sizing: content-box !important;
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .carousel-container {
     height: auto;
@@ -117,7 +109,7 @@
   }
   .carousel-text {
     bottom: 15px;
-    left: 20px; /* Keep it aligned to the left */
+    left: 20px;
     max-width: 70%;
   }
   .carousel-text h2 {
@@ -140,7 +132,7 @@
   }
   .carousel-text {
     bottom: 10px;
-    left: 15px; /* Adjust for smaller screens */
+    left: 15px;
     max-width: 85%;
   }
   .carousel-text h2 {

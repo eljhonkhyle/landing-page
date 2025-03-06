@@ -1,14 +1,13 @@
 section {
   margin-top: 3rem;
   left: 0;
-  bottom: 0; /* Changed from 12px to 0 to keep it fully fixed */
+  bottom: 0;
   width: 100%;
   background: #112132;
   padding-top: 60px;
-  z-index: 1000; /* Ensures it stays above other content */
+  z-index: 1000;
 }
 
-/* Footer container */
 footer {
   display: flex;
   align-items: flex-start;
@@ -17,30 +16,29 @@ footer {
 }
 
 .why-choose {
-  flex-grow: 1; /* Allows it to expand */
+  flex-grow: 1;
   color: #a2b5cd;
   line-height: 2rem;
 }
 
 .why-choose h2 {
-  font-size: 20px; /* Slightly larger for better visibility */
+  font-size: 20px;
   color: #f7f7f7;
   margin-bottom: 12px;
 }
 
 .why-choose p {
-  font-size: 15px; /* Slightly bigger for readability */
+  font-size: 15px;
   margin: 6px 0;
 }
 
 .footer-logo {
   padding: 2rem;
-  max-width: 110px; /* Adjust the width to fit well */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensures proper scaling */
+  max-width: 110px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Medium Screen Adjustments */
 @media (min-width: 620px) and (max-width: 1024px) {
   footer.top {
     flex-direction: column;
@@ -61,7 +59,7 @@ footer {
     gap: 18px;
   }
 }
-/* Responsive: Adjust layout on smaller screens */
+
 @media (max-width: 620px) {
   footer {
     flex-direction: column;
@@ -75,12 +73,10 @@ footer {
   }
 }
 
-/* Footer logo */
 footer > img {
   margin-top: 10px;
 }
 
-/* Max width on larger screens */
 @media (min-width: 620px) {
   footer {
     margin: 0 auto;
@@ -93,22 +89,19 @@ footer {
   color: #a2b5cd;
 }
 
-/* Top Footer */
 footer.top {
   max-width: 100%;
   border-bottom: 2px solid #3a4f6a;
   padding-bottom: 20px;
 }
 
-/* Bottom Footer */
 footer.bottom {
   padding: 20px 0;
   justify-content: space-between;
   display: flex;
-  position: relative; /* Allows flexible positioning */
+  position: relative;
 }
 
-/* Footer Links */
 footer.top .links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -129,7 +122,6 @@ footer h2 {
   color: #f7f7f7;
 }
 
-/* Legal Section */
 .legal {
   font-size: 12px;
 }
@@ -142,7 +134,6 @@ footer h2 {
   margin-right: 10px;
 }
 
-/* Social Links */
 footer.bottom .links {
   display: flex;
   gap: 18px;
@@ -153,7 +144,6 @@ footer.bottom .links > a {
   color: #085668;
 }
 
-/* Small Screen Adjustments */
 @media (max-width: 420px) {
   footer {
     text-align: center;

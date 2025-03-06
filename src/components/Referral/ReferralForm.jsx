@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Skeleton from "../Skeleton";
-import { toast } from "sonner"; // ✅ Import only `toast`, not `Toaster`
+import { toast } from "sonner";
 import "./styles/referralform.css";
 
 const ReferralForm = () => {
@@ -28,14 +28,14 @@ const ReferralForm = () => {
         "5fZg2XH9aUXBtyOP6"
       )
       .then(() => {
-        toast.success("Referral email sent successfully!"); // ✅ Success toast
+        toast.success("Referral email sent successfully!");
         setReferrerName("");
         setReferralName("");
         setReferralEmail("");
       })
       .catch((error) => {
         console.error("Error sending email:", error);
-        toast.error("Failed to send referral. Please try again."); // ✅ Error toast
+        toast.error("Failed to send referral. Please try again.");
       })
       .finally(() => setLoading(false));
   };
