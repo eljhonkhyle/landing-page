@@ -12,9 +12,9 @@ import Skeleton from "../Skeleton";
 const feedbacks = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Alfonso Reed",
     review:
-      "Amazing service! The property buying process was seamless and efficient.",
+      "I am very satisfied with my arrangements. My main reason for my rating is because the house is very clean and everyone is welcoming. The neighborhood is pretty nice.",
     rating: 5,
   },
   {
