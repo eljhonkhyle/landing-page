@@ -18,21 +18,21 @@ const properties = [
     name: "10951 Mustang Spring",
     location: "Texas, USA",
     image: Mustang1,
-    amenities: { beds: 3, baths: 2 },
+    amenities: { beds: 5, baths: 3.5 },
   },
   {
     id: 2,
     name: "6308 Green Top Dr",
     location: "Texas, USA",
     image: GreenTop1,
-    amenities: { beds: 4, baths: 3 },
+    amenities: { beds: 2, baths: 2.0 },
   },
   {
     id: 3,
     name: "7613 Agave Bnd",
     location: "Texas, USA",
     image: Agave1,
-    amenities: { beds: 5, baths: 4 },
+    amenities: { beds: 3, baths: 2.5 },
   },
 ];
 
@@ -81,11 +81,15 @@ const Carousel = () => {
                 <>
                   <h2>{property.name}</h2>
                   <p>{property.location}</p>
-                  <p>
-                    <FaBed className="inline mr-1" /> {property.amenities.beds}{" "}
-                    Beds |
-                    <FaBath className="inline ml-2 mr-1" />{" "}
-                    {property.amenities.baths} Baths
+                  <p className="flex items-center">
+                    <span className="flex items-center mr-3">
+                      <FaBed className="mr-1" /> {property.amenities.beds} Beds
+                    </span>
+                    <span className="inline-flex mx-3"> | </span>
+                    <span className="flex items-center">
+                      <FaBath className="mr-1" /> {property.amenities.baths}{" "}
+                      Baths
+                    </span>
                   </p>
                 </>
               )}

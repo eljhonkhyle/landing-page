@@ -70,7 +70,7 @@ const ReferralForm = () => {
             <>
               <input
                 type="text"
-                placeholder="Friend's Name"
+                placeholder="Referred Name"
                 value={referralName}
                 onChange={(e) => setReferralName(e.target.value)}
                 className="referral-input"
@@ -78,7 +78,7 @@ const ReferralForm = () => {
               />
               <input
                 type="email"
-                placeholder="Friend's Email"
+                placeholder="Referred Email"
                 value={referralEmail}
                 onChange={(e) => setReferralEmail(e.target.value)}
                 className="referral-input"
