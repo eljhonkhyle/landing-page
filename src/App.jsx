@@ -16,7 +16,6 @@ import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
 import { ReferralProvider } from "./components/Referral/ReferralContext";
 import SignIn from "./pages/SignIn/SignIn";
-import AdminPanel from "./pages/admin/AdminPanel";
 
 function Home() {
   return (
@@ -62,7 +61,6 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
         <div id="toaster-container">
           <Toaster position="top-right" />
