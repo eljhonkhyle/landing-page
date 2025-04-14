@@ -15,7 +15,6 @@ import Amenities from "./components/Amenities/Amenities";
 import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
 import { ReferralProvider } from "./components/Referral/ReferralContext";
-import SignIn from "./SignIn/SignIn";
 
 function Home() {
   return (
@@ -61,7 +60,6 @@ function App() {
           <Route path="/amenities" element={<Amenities />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<SignIn />} />
         </Routes>
         <div id="toaster-container">
           <Toaster position="top-right" />
