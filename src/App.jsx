@@ -15,7 +15,7 @@ import Amenities from "./components/Amenities/Amenities";
 import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
 import { ReferralProvider } from "./components/Referral/ReferralContext";
-import SignIn from "./pages/SignIn/SignIn";
+import SignIn from "./SignIn/SignIn";
 
 function Home() {
   return (
@@ -42,6 +42,7 @@ function Layout({ children }) {
       {!isSignInPage && <Footer />}
     </>
   );
+  x;
 }
 
 function App() {
