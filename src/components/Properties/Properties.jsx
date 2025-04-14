@@ -20,15 +20,17 @@ import GreenTop6 from "../../assets/6308 Green Top Dr/greentop6.jpg";
 import GreenTop7 from "../../assets/6308 Green Top Dr/greentop7.jpg";
 import GreenTop8 from "../../assets/6308 Green Top Dr/greentop8.jpg";
 import GreenTop9 from "../../assets/6308 Green Top Dr/greentop9.jpg";
-import Agave1 from "../../assets/7613 Agave Bnd/agave0.png";
-import Agave2 from "../../assets/7613 Agave Bnd/agave1.png";
-import Agave3 from "../../assets/7613 Agave Bnd/agave2.png";
-import Agave4 from "../../assets/7613 Agave Bnd/agave3.png";
-import Agave5 from "../../assets/7613 Agave Bnd/agave4.png";
-import Agave6 from "../../assets/7613 Agave Bnd/agave5.png";
-import Agave7 from "../../assets/7613 Agave Bnd/agave6.png";
-import Agave8 from "../../assets/7613 Agave Bnd/agave7.png";
-import Agave9 from "../../assets/7613 Agave Bnd/agave8.png";
+import Agave1 from "../../assets/7613 Agave Bnd/agave0.jpg";
+import Agave2 from "../../assets/7613 Agave Bnd/agave1.jpg";
+import Agave3 from "../../assets/7613 Agave Bnd/agave2.jpg";
+import Agave4 from "../../assets/7613 Agave Bnd/agave3.jpg";
+import Agave5 from "../../assets/7613 Agave Bnd/agave4.jpg";
+import Agave6 from "../../assets/7613 Agave Bnd/agave5.jpg";
+import Agave7 from "../../assets/7613 Agave Bnd/agave6.jpg";
+import Agave8 from "../../assets/7613 Agave Bnd/agave7.jpg";
+import Agave9 from "../../assets/7613 Agave Bnd/agave7.png";
+import Agave10 from "../../assets/7613 Agave Bnd/agave9.jpg";
+
 const Properties = () => {
   const [loading, setLoading] = useState(true);
   const [lightbox, setLightbox] = useState({
@@ -88,6 +90,7 @@ const Properties = () => {
         Agave7,
         Agave8,
         Agave9,
+        Agave10,
       ],
       description:
         "Ideal for those looking for a quiet and convenient living space.",

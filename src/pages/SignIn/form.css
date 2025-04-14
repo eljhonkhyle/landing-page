@@ -1,0 +1,180 @@
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ffffff, #f7f7f7);
+}
+
+.signup-box {
+  display: flex;
+  flex-direction: row; /* Ensures the form and image are side by side */
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.signup-form {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+}
+
+.signup-form h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #085668;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  color: #333;
+  font-size: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 81, 99, 0.9);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #005163;
+}
+
+.login-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.signup-image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7; /* Light background to contrast */
+  text-align: center;
+  padding: 20px;
+}
+
+.signup-image img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+}
+
+.google-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #1d1e23; /* Google Red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-button:hover {
+  background: #111215;
+}
+
+.google-icon {
+  margin-right: 10px;
+}
+
+.signup-form input,
+.signup-form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.divider span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.error {
+  color: red; /* Set text color to red */
+  font-size: 14px;
+  margin-top: 5px;
+  animation: shake 0.3s ease-in-out; /* Apply shake effect */
+}
+
+.input-error {
+  border: 1px solid red !important; /* Make the input field border red */
+  animation: shake 0.3s ease-in-out;
+}
